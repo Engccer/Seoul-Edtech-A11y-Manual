@@ -144,6 +144,59 @@
             color: white;
         }
 
+        /* 대분류 섹션 (section) 접이식 스타일 */
+        .section-container {
+            border: 2px solid #1a73e8;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .section-container .collapsible-header {
+            background-color: #1a73e8;
+        }
+
+        .section-container .collapsible-header:hover {
+            background-color: #1557b0;
+        }
+
+        .section-container .collapsible-header h2 {
+            color: white;
+        }
+
+        .section-container .collapsible-toggle {
+            color: white;
+        }
+
+        /* 중분류 섹션 (article) 접이식 스타일 */
+        .article-container {
+            border: 1px solid #34a853;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .article-container .collapsible-header {
+            background-color: #34a853;
+            padding: 12px 15px;
+        }
+
+        .article-container .collapsible-header:hover {
+            background-color: #2e8b43;
+        }
+
+        .article-container .collapsible-header h3 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .article-container .collapsible-toggle {
+            color: white;
+        }
+
         .guideline-divider {
             border: none;
             border-top: 2px dashed #1a73e8;
@@ -447,24 +500,36 @@
 
         <main id="main-content">
             <!-- 소개 -->
-            <section class="intro" aria-labelledby="intro-title">
-                <h2 id="intro-title">소개</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('intro')" role="button" tabindex="0" aria-expanded="false" aria-controls="intro-content">
+                    <h2 id="intro-title">소개</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="intro-content" class="collapsible-content" aria-labelledby="intro-title" aria-hidden="true">
+                    <p>NotebookLM은 구글에서 제공하는 AI 기반 연구 및 학습 보조 도구입니다. 사용자가 업로드한 문서, 웹사이트, 오디오 파일 등의 소스 자료를 AI가 분석하여 요약, 질의응답, 학습 자료 생성 등 다양한 기능을 제공합니다. 일반 AI 챗봇과 달리 사용자가 제공한 소스에만 근거하여 답변하므로 정보의 정확성과 신뢰성이 높습니다. 대부분의 기능은 무료이며, 교육용 구글 계정(센메일 등)으로도 사용할 수 있습니다.</p>
 
-                <p>NotebookLM은 구글에서 제공하는 AI 기반 연구 및 학습 보조 도구입니다. 사용자가 업로드한 문서, 웹사이트, 오디오 파일 등의 소스 자료를 AI가 분석하여 요약, 질의응답, 학습 자료 생성 등 다양한 기능을 제공합니다. 일반 AI 챗봇과 달리 사용자가 제공한 소스에만 근거하여 답변하므로 정보의 정확성과 신뢰성이 높습니다. 대부분의 기능은 무료이며, 교육용 구글 계정(센메일 등)으로도 사용할 수 있습니다.</p>
+                    <p>NotebookLM의 주요 특징은 다양한 출력 형식을 지원한다는 점입니다. AI 오디오 오버뷰 기능은 텍스트 자료를 두 명의 AI 음성이 자연스럽게 대화하는 팟캐스트로 변환하여, 시각적 부담 없이 청각적으로 학습할 수 있도록 돕습니다. 또한 보고서, 플래시카드, 마인드맵 등 다양한 학습 자료를 자동으로 생성하여 수업 준비 시간을 크게 절약할 수 있습니다.</p>
 
-                <p>NotebookLM의 주요 특징은 다양한 출력 형식을 지원한다는 점입니다. AI 오디오 오버뷰 기능은 텍스트 자료를 두 명의 AI 음성이 자연스럽게 대화하는 팟캐스트로 변환하여, 시각적 부담 없이 청각적으로 학습할 수 있도록 돕습니다. 또한 보고서, 플래시카드, 마인드맵 등 다양한 학습 자료를 자동으로 생성하여 수업 준비 시간을 크게 절약할 수 있습니다.</p>
+                    <p>웹 접근성 측면에서 NotebookLM은 명확한 헤딩 구조(H1, H2)와 논리적인 탭 순서를 제공하여 센스리더로 효율적으로 탐색할 수 있습니다. 화면은 "출처", "채팅", "스튜디오" 3개 패널로 구성되며, <kbd>H</kbd> 키로 각 패널 간 빠르게 이동할 수 있습니다. 대부분의 주요 기능은 키보드만으로 완전히 제어 가능하며, 버튼과 편집창에는 명확한 레이블이 제공됩니다.</p>
 
-                <p>웹 접근성 측면에서 NotebookLM은 명확한 헤딩 구조(H1, H2)와 논리적인 탭 순서를 제공하여 센스리더로 효율적으로 탐색할 수 있습니다. 화면은 "출처", "채팅", "스튜디오" 3개 패널로 구성되며, <kbd>H</kbd> 키로 각 패널 간 빠르게 이동할 수 있습니다. 대부분의 주요 기능은 키보드만으로 완전히 제어 가능하며, 버튼과 편집창에는 명확한 레이블이 제공됩니다.</p>
-
-                <p>시각장애 교원에게 NotebookLM은 연구 자료를 효율적으로 정리하고 분석하며, 학생들을 위한 맞춤형 학습 자료를 신속하게 제작할 수 있는 강력한 도구입니다. 센스리더의 <kbd>H</kbd> 키와 <kbd>Tab</kbd> 키를 활용하면 화면 구조를 빠르게 파악하고 원하는 기능에 접근할 수 있습니다.</p>
-            </section>
+                    <p>시각장애 교원에게 NotebookLM은 연구 자료를 효율적으로 정리하고 분석하며, 학생들을 위한 맞춤형 학습 자료를 신속하게 제작할 수 있는 강력한 도구입니다. 센스리더의 <kbd>H</kbd> 키와 <kbd>Tab</kbd> 키를 활용하면 화면 구조를 빠르게 파악하고 원하는 기능에 접근할 수 있습니다.</p>
+                </div>
+            </div>
 
             <!-- 1. NotebookLM 시작하기 -->
-            <section aria-labelledby="section1">
-                <h2 id="section1">1. NotebookLM 시작하기</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section1-content">
+                    <h2 id="section1">1. NotebookLM 시작하기</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section1-content" class="collapsible-content" aria-labelledby="section1" aria-hidden="true">
 
-                <article aria-labelledby="section1-1">
-                    <h3 id="section1-1">1-1. 접속 및 로그인</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section1-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section1-1-content">
+                        <h3 id="section1-1">1-1. 접속 및 로그인</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section1-1-content" class="collapsible-content" aria-labelledby="section1-1" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -492,10 +557,15 @@
                         <span class="section-label tip">센스리더 팁</span>
                         <p><kbd>H</kbd> 키를 눌러 H1 헤딩으로 바로 이동할 수 있습니다. <kbd>Tab</kbd> 키로 "새 노트 만들기" 버튼에 접근합니다.</p>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section1-2">
-                    <h3 id="section1-2">1-2. 새 노트북 만들기</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section1-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section1-2-content">
+                        <h3 id="section1-2">1-2. 새 노트북 만들기</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section1-2-content" class="collapsible-content" aria-labelledby="section1-2" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -554,15 +624,26 @@
                         <span class="section-label tip">센스리더 팁</span>
                         <p><kbd>H</kbd> 키를 반복해서 눌러 "출처", "채팅", "스튜디오" 세 헤딩을 탐색합니다. 각 헤딩에서 <kbd>Tab</kbd> 키로 하위 버튼에 접근합니다.</p>
                     </div>
-                </article>
-            </section>
+                    </div>
+                </div>
+
+                </div>
+            </div>
 
             <!-- 2. 소스 추가하기 -->
-            <section aria-labelledby="section2">
-                <h2 id="section2">2. 소스(학습 자료) 추가하기</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-content">
+                    <h2 id="section2">2. 소스(학습 자료) 추가하기</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section2-content" class="collapsible-content" aria-labelledby="section2" aria-hidden="true">
 
-                <article aria-labelledby="section2-1">
-                    <h3 id="section2-1">2-1. 파일 업로드</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section2-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-1-content">
+                        <h3 id="section2-1">2-1. 파일 업로드</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section2-1-content" class="collapsible-content" aria-labelledby="section2-1" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -585,10 +666,15 @@
                         <span class="section-label tip">센스리더 팁</span>
                         <p>여러 파일을 한 번에 선택하려면 <kbd>Ctrl</kbd> 키를 누른 채 파일을 선택합니다.</p>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section2-2">
-                    <h3 id="section2-2">2-2. 웹사이트 및 유튜브 링크 추가</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section2-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-2-content">
+                        <h3 id="section2-2">2-2. 웹사이트 및 유튜브 링크 추가</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section2-2-content" class="collapsible-content" aria-labelledby="section2-2" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -606,10 +692,15 @@
                             <li>Step 6. "삽입" 버튼을 눌러 추가합니다.</li>
                         </ul>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section2-3">
-                    <h3 id="section2-3">2-3. 텍스트 복사 붙여넣기</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section2-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-3-content">
+                        <h3 id="section2-3">2-3. 텍스트 복사 붙여넣기</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section2-3-content" class="collapsible-content" aria-labelledby="section2-3" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -627,10 +718,15 @@
                             <li>Step 6. "삽입" 버튼을 눌러 추가합니다.</li>
                         </ul>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section2-4">
-                    <h3 id="section2-4">2-4. 소스 검색</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section2-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-4-content">
+                        <h3 id="section2-4">2-4. 소스 검색</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section2-4-content" class="collapsible-content" aria-labelledby="section2-4" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -649,15 +745,26 @@
                             <li>Step 7. 페이지 하단의 "가져오기" 버튼을 눌러 선택한 자료를 한꺼번에 출처에 추가합니다.</li>
                         </ul>
                     </div>
-                </article>
-            </section>
+                    </div>
+                </div>
+
+                </div>
+            </div>
 
             <!-- 3. 채팅 패널 -->
-            <section aria-labelledby="section3">
-                <h2 id="section3">3. 채팅 패널 - AI와 대화하기</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-content">
+                    <h2 id="section3">3. 채팅 패널 - AI와 대화하기</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section3-content" class="collapsible-content" aria-labelledby="section3" aria-hidden="true">
 
-                <article aria-labelledby="section3-1">
-                    <h3 id="section3-1">3-1. AI와 질문하고 답변 받기</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section3-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-1-content">
+                        <h3 id="section3-1">3-1. AI와 질문하고 답변 받기</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section3-1-content" class="collapsible-content" aria-labelledby="section3-1" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -690,10 +797,15 @@
                         <span class="section-label tip">센스리더 팁</span>
                         <p>AI 답변 영역에서 사용자가 질문한 프롬프트는 h3 헤딩으로 구분되므로 <kbd>H</kbd> 키로 탐색하면 편리합니다. 출처 번호를 클릭하면 해당 소스의 해당 부분이 팝업으로 표시됩니다.</p>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section3-2">
-                    <h3 id="section3-2">3-2. AI 답변 활용하기</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section3-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-2-content">
+                        <h3 id="section3-2">3-2. AI 답변 활용하기</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section3-2-content" class="collapsible-content" aria-labelledby="section3-2" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -716,10 +828,15 @@
                             <li>Step 3. 다른 문서에서 <kbd>Ctrl+V</kbd>를 눌러 붙여넣습니다.</li>
                         </ul>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section3-3">
-                    <h3 id="section3-3">3-3. 채팅 패널에서 학습 자료 생성하기</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section3-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-3-content">
+                        <h3 id="section3-3">3-3. 채팅 패널에서 학습 자료 생성하기</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section3-3-content" class="collapsible-content" aria-labelledby="section3-3" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -740,15 +857,26 @@
                             <li>Step 4. 결과를 확인합니다.</li>
                         </ul>
                     </div>
-                </article>
-            </section>
+                    </div>
+                </div>
+
+                </div>
+            </div>
 
             <!-- 4. 스튜디오 패널 -->
-            <section aria-labelledby="section4">
-                <h2 id="section4">4. 스튜디오 패널 - 학습 자료 생성하기</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-content">
+                    <h2 id="section4">4. 스튜디오 패널 - 학습 자료 생성하기</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section4-content" class="collapsible-content" aria-labelledby="section4" aria-hidden="true">
 
-                <article aria-labelledby="section4-1">
-                    <h3 id="section4-1">4-1. AI 오디오 오버뷰 (팟캐스트) 생성</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section4-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-1-content">
+                        <h3 id="section4-1">4-1. AI 오디오 오버뷰 (팟캐스트) 생성</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section4-1-content" class="collapsible-content" aria-labelledby="section4-1" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -780,10 +908,15 @@
                         <span class="section-label tip">센스리더 팁</span>
                         <p>오디오 플레이어에서는 센스리더의 가상 커서를 해제하고 사용해야 합니다. (<kbd>Ctrl+Shift+F12</kbd> 키)</p>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section4-2">
-                    <h3 id="section4-2">4-2. 동영상 개요 생성</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section4-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-2-content">
+                        <h3 id="section4-2">4-2. 동영상 개요 생성</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section4-2-content" class="collapsible-content" aria-labelledby="section4-2" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -799,10 +932,15 @@
                             <li>Step 4. 생성이 완료되면 결과를 확인합니다.</li>
                         </ul>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section4-3">
-                    <h3 id="section4-3">4-3. 마인드맵 생성</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section4-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-3-content">
+                        <h3 id="section4-3">4-3. 마인드맵 생성</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section4-3-content" class="collapsible-content" aria-labelledby="section4-3" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -824,10 +962,15 @@
                         <span class="section-label tip">센스리더 팁</span>
                         <p>마인드맵은 기본적으로 시각적 형태이지만, 각 노드를 <kbd>Tab</kbd> 키로 선택하면 해당 개념에 대한 질문이 채팅창에 텍스트로 제시됩니다. 이를 통해 핵심 주제를 파악하고 질문할 수 있습니다.</p>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section4-4">
-                    <h3 id="section4-4">4-4. 보고서 생성</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section4-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-4-content">
+                        <h3 id="section4-4">4-4. 보고서 생성</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section4-4-content" class="collapsible-content" aria-labelledby="section4-4" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -843,10 +986,15 @@
                             <li>Step 4. 생성이 완료되면 결과를 확인하고 필요시 복사합니다.</li>
                         </ul>
                     </div>
-                </article>
+                    </div>
+                </div>
 
-                <article aria-labelledby="section4-5">
-                    <h3 id="section4-5">4-5. 플래시카드 생성</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section4-5')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-5-content">
+                        <h3 id="section4-5">4-5. 플래시카드 생성</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section4-5-content" class="collapsible-content" aria-labelledby="section4-5" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -863,15 +1011,26 @@
                             <li>Step 5. 생성이 완료되면 결과를 확인합니다.</li>
                         </ul>
                     </div>
-                </article>
-            </section>
+                    </div>
+                </div>
+
+                </div>
+            </div>
 
             <!-- 5. 결과물 정리 및 공유 -->
-            <section aria-labelledby="section5">
-                <h2 id="section5">5. 결과물 정리 및 공유</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section5')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-content">
+                    <h2 id="section5">5. 결과물 정리 및 공유</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section5-content" class="collapsible-content" aria-labelledby="section5" aria-hidden="true">
 
-                <article aria-labelledby="section5-1">
-                    <h3 id="section5-1">5-1. 노트북 공유</h3>
+                <div class="collapsible-container article-container">
+                    <div class="collapsible-header" onclick="toggleSection('section5-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-1-content">
+                        <h3 id="section5-1">5-1. 노트북 공유</h3>
+                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    </div>
+                    <div id="section5-1-content" class="collapsible-content" aria-labelledby="section5-1" aria-hidden="true">
 
                     <div>
                         <span class="section-label concept">개념</span>
@@ -889,12 +1048,19 @@
                             <li>Step 6. 생성된 링크를 복사한 후 (<kbd>Ctrl+C</kbd>) 전달합니다.</li>
                         </ul>
                     </div>
-                </article>
-            </section>
+                    </div>
+                </div>
+
+                </div>
+            </div>
 
             <!-- 자주 묻는 질문 -->
-            <section aria-labelledby="section-faq">
-                <h2 id="section-faq">자주 묻는 질문</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section-faq')" role="button" tabindex="0" aria-expanded="false" aria-controls="section-faq-content">
+                    <h2 id="section-faq">자주 묻는 질문</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section-faq-content" class="collapsible-content" aria-labelledby="section-faq" aria-hidden="true">
 
                 <div class="faq-item">
                     <div class="faq-question">Q1: 무료로 사용할 수 있나요?</div>
@@ -935,11 +1101,16 @@
                     <div class="faq-question">Q8: 노트북을 삭제하려면?</div>
                     <div class="faq-answer">시작 화면의 "최근 노트북" 목록에서 해당 노트북의 "더보기" 메뉴(<kbd>Shift+F10</kbd>)에서 "삭제"를 선택합니다. 삭제된 노트북은 복구할 수 없습니다.</div>
                 </div>
-            </section>
+                </div>
+            </div>
 
             <!-- 요약 -->
-            <section class="summary" aria-labelledby="section-summary">
-                <h2 id="section-summary">요약</h2>
+            <div class="collapsible-container section-container">
+                <div class="collapsible-header" onclick="toggleSection('section-summary')" role="button" tabindex="0" aria-expanded="false" aria-controls="section-summary-content">
+                    <h2 id="section-summary">요약</h2>
+                    <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                </div>
+                <div id="section-summary-content" class="collapsible-content" aria-labelledby="section-summary" aria-hidden="true">
 
                 <p>NotebookLM은 구글의 AI 기반 연구 및 학습 도구로, 다양한 소스 자료를 분석하여 요약, 질의응답, 학습 자료 생성 등의 기능을 제공합니다. 센스리더 사용자를 위한 핵심 기능과 팁을 정리하면 다음과 같습니다.</p>
 
@@ -969,7 +1140,8 @@
                     <li>명확한 헤딩 구조로 효율적인 키보드 탐색</li>
                     <li>다양한 학습 자료 자동 생성으로 수업 준비 시간 절약</li>
                 </ul>
-            </section>
+                </div>
+            </div>
         </main>
 
         <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
