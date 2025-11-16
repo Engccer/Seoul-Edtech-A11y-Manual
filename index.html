@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>시각장애 교원을 위한 NotebookLM 사용법 안내</title>
+    <title>시각장애 교원을 위한 노트북LM 사용법 안내</title>
     <style>
         /* 기본 스타일 */
         * {
@@ -112,36 +112,14 @@
         }
 
         .collapsible-content.open {
-            max-height: 3000px;
+            max-height: 5000px;
             padding: 25px;
-            transition: max-height 0.6s ease-in;
+            transition: max-height 0.8s ease-in;
         }
 
-        /* 가이드라인 섹션 */
+        /* 집필 가이드 섹션 */
         .guideline-container {
             background-color: #fff3cd;
-        }
-
-        /* 템플릿 섹션 */
-        .template-container {
-            background-color: #e8f5e9;
-            border-color: #34a853;
-        }
-
-        .template-container .collapsible-header {
-            background-color: #34a853;
-        }
-
-        .template-container .collapsible-header:hover {
-            background-color: #2e8b43;
-        }
-
-        .template-container .collapsible-header h2 {
-            color: white;
-        }
-
-        .template-container .collapsible-toggle {
-            color: white;
         }
 
         /* 대분류 섹션 (section) 접이식 스타일 */
@@ -213,18 +191,9 @@
             margin-bottom: 10px;
         }
 
-        /* 소개 섹션 */
-        .intro {
-            background-color: #f8f9fa;
-            border-left: 5px solid #fbbc04;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
         /* 서브섹션 레이블 */
         .section-label {
             display: inline-block;
-            background-color: #34a853;
             color: white;
             padding: 5px 12px;
             border-radius: 4px;
@@ -293,43 +262,12 @@
             margin-bottom: 8px;
         }
 
-        /* 요약 섹션 */
-        .summary {
-            background-color: #e8f5e9;
-            border: 2px solid #34a853;
-            border-radius: 8px;
-            padding: 25px;
-            margin-top: 30px;
-        }
-
-        .summary h2 {
-            color: #34a853;
-            border-left-color: #34a853;
-        }
-
         /* 키 포인트 박스 */
         .key-points {
             background-color: #fff3cd;
             border-left: 5px solid #fbbc04;
             padding: 15px;
             margin: 20px 0;
-        }
-
-        /* 화면 구조 박스 */
-        .screen-structure {
-            background-color: #fce8e6;
-            border: 1px solid #ea4335;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-
-        /* 팁 박스 */
-        .tip-box {
-            background-color: #e3f2fd;
-            border-left: 5px solid #1a73e8;
-            padding: 15px;
-            margin: 15px 0;
         }
 
         /* 반응형 디자인 */
@@ -401,101 +339,56 @@
                 <span class="collapsible-toggle" aria-hidden="true">▼</span>
             </div>
             <div id="guideline-content" class="collapsible-content" aria-labelledby="guideline-title" aria-hidden="true">
-                <p>본 문서는 시각장애 교원을 위한 AI·에듀테크 접근성 매뉴얼 작성 시 샘플로 사용하기 위하여 만들었습니다. 일반 텍스트 형식이며, 기본적으로 다음 구조를 따릅니다.</p>
+                <p>본 문서는 AI·에듀테크 접근성 매뉴얼 작성의 일관성을 유지하기 위한 집필 가이드입니다. <code>매뉴얼_NotebookLM_V3.txt</code> 파일을 기반으로 작성되었습니다.</p>
 
-                <h3>문서 구조</h3>
-                <ol>
-                    <li>소개: 서비스의 전반적 개요, 주요 특징, 접근성 장점을 포괄적으로 설명</li>
-                    <li>주요 기능별 섹션: 대분류 → 중분류 계층 구조</li>
-                    <li>자주 묻는 질문과 답변(FAQ)</li>
-                    <li>요약: 핵심 기능 및 스크린 리더 활용 팁 정리</li>
-                </ol>
-
-                <p>각 기능 섹션은 아래 하위 섹션으로 구성됩니다.</p>
-
-                <h3>기능별 하위 섹션</h3>
+                <h3>1. 파일 형식</h3>
                 <ul>
-                    <li><strong>[개념] (필수):</strong> 해당 기능에 대한 포괄적 설명 (한 단락)</li>
-                    <li><strong>[실행 순서] (필수):</strong> 단계별 절차 (Step 1., Step 2., Step 3. 형식으로 문장 형태 사용)</li>
-                    <li><strong>[화면 구조] (필요 시):</strong> 헤딩, 버튼, 편집창 등 주요 요소 위치</li>
-                    <li><strong>[센스리더 팁] (필요 시):</strong> 효율적인 키보드 탐색 방법</li>
+                    <li>파일은 일반 텍스트(<code>.txt</code>) 파일로 작성합니다. (윈도우 11 기본 인코딩 <code>UTF-8</code> 방식)</li>
+                    <li>파일명은 <code>매뉴얼_도구이름.txt</code> 형식을 따르며, 버전이 있는 경우에는 <code>매뉴얼_도구이름_Vn.txt</code>로 버전을 표기합니다.</li>
                 </ul>
 
-                <h3>작성 원칙</h3>
+                <h3>2. 문서 구조 (마크다운 기준)</h3>
                 <ul>
-                    <li>브라우저는 Chrome, 스크린 리더는 센스리더를 기본으로 설명합니다.</li>
-                    <li>일반 사용자 대상 문서이므로 기술 용어 사용은 지양합니다.</li>
-                    <li>단, 센스리더 탐색에 필요한 용어(H2, H3 헤딩, 버튼, 편집창 등)는 명시합니다.</li>
-                    <li>[개념] 섹션은 해당 기능만 읽어도 전체 기능을 이해할 수 있도록 충분히 상세하게 작성합니다.</li>
-                    <li>실행 순서는 키보드를 사용한 구체적인 단계별 절차로 제시하며, 쉽게 이해할 수 있도록 완전한 문장 형태로 작성합니다.</li>
-                    <li>화면 구조에서 버튼은 "버튼 이름 버튼" 형식으로, 헤딩은 "헤딩 이름 Heading 레벨" 형식으로 표기합니다.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 템플릿 (접이식) -->
-        <div class="collapsible-container template-container">
-            <div class="collapsible-header" onclick="toggleSection('template')" role="button" tabindex="0" aria-expanded="false" aria-controls="template-content">
-                <h2 id="template-title">템플릿</h2>
-                <span class="collapsible-toggle" aria-hidden="true">▼</span>
-            </div>
-            <div id="template-content" class="collapsible-content" aria-labelledby="template-title" aria-hidden="true">
-                <h3>서비스 이름</h3>
-
-                <hr class="guideline-divider">
-
-                <h3>소개</h3>
-                <p>(서비스의 전반적 개요, 주요 특징, 접근성 장점을 포괄적으로 설명합니다. 여러 단락으로 구성할 수 있으며, 서비스 소개, 주요 특징, 웹 접근성, 시각장애 교원에게 유용한 점 등을 포함합니다.)</p>
-
-                <hr class="guideline-divider">
-
-                <h3>1. 대분류 제목</h3>
-
-                <h4>1-1. 중분류 제목</h4>
-
-                <p><strong>[개념]</strong><br>
-                (해당 기능에 대한 포괄적 설명을 한 단락으로 작성합니다. 이 섹션만 읽어도 전체 기능을 이해할 수 있도록 충분히 상세하게 작성합니다.)</p>
-
-                <p><strong>[실행 순서]</strong></p>
-                <ul>
-                    <li>Step 1. (첫 번째 단계를 완전한 문장으로 설명합니다.)</li>
-                    <li>Step 2. (두 번째 단계를 완전한 문장으로 설명합니다.)</li>
-                    <li>Step 3. (세 번째 단계를 완전한 문장으로 설명합니다.)</li>
+                    <li><strong>최상위 제목 (H1):</strong> <code># 도구이름 사용법 안내</code> 형식으로 작성합니다.</li>
+                    <li><strong>소개와 요약 (H2):</strong> 본문은 <code>소개</code>로 시작해서 <code>요약</code>으로 마무리합니다. 별도의 번호는 부여하지 않습니다.</li>
+                    <li><strong>대분류 기능 (H2):</strong> 핵심 기능을 설명하는 섹션으로, <code>## n. 섹션 제목 🚀</code> 형식으로 작성하며, 섹션 번호와 제목, 그리고 끝에 내용에 어울리는 이모지 한 개를 추가합니다.</li>
+                    <li><strong>중분류 기능 (H3):</strong> 대분류 기능 아래 <code>### n.n. 소주제</code> 형식으로 작성합니다. 기능이 세분화되지 않는 경우 생략할 수 있습니다.</li>
+                    <li><strong>핵심 설명 (H4):</strong> 대분류 또는 중분류 기능 아래 <code>#### 소주제</code> 형식으로 작성하며, <code>실행 순서</code>, <code>화면 구성</code>, <code>센스리더 팁</code> 등으로 작성합니다. 중분류 섹션이 없는 경우에도 H4(# 4개)로 표기하며, n.n.n.과 같이 번호를 붙이지 않습니다.</li>
                 </ul>
 
-                <p><strong>[화면 구조] (필요 시)</strong></p>
+                <h3>3. 본문 구성</h3>
                 <ul>
-                    <li>요소 이름 Heading 레벨 (헤딩인 경우)</li>
-                    <li>요소 이름 버튼 (버튼인 경우)</li>
-                    <li>요소 이름 편집창 (편집창인 경우)</li>
-                    <li>요소 이름 멀티라인 편집창 (멀티라인 편집창인 경우)</li>
-                    <li>기타 요소</li>
+                    <li>모든 매뉴얼은 아래 5개의 섹션을 포함하는 것을 원칙으로 합니다.
+                        <ol>
+                            <li><code>소개</code>: 도구 개요, 주요 특징, 접근성 특징, 주요 활용 사례 요약</li>
+                            <li><code>주요 기능 섹션</code>: 대분류에 해당하는 기능들</li>
+                            <li><code>도구 활용 아이디어</code>: 실제 교육 현장 활용법 제안</li>
+                            <li><code>자주 묻는 질문 (FAQ)</code></li>
+                            <li><code>요약</code>: 전체 내용의 핵심 요약</li>
+                        </ol>
+                    </li>
+                    <li>위 5개 섹션 간에는 빈 줄을 2개 두어 구분을 명확히 합니다.</li>
                 </ul>
 
-                <p><strong>[센스리더 팁] (필요 시)</strong><br>
-                (효율적인 키보드 탐색 방법을 설명합니다.)</p>
+                <h3>4. 기능 섹션 작성 스타일</h3>
+                <ul>
+                    <li><strong>기능 요약:</strong> 모든 대분류(H2), 중분류(H3) 제목 아래에는 해당 섹션의 핵심 내용을 설명하는 두세 문장의 요약 단락을 작성합니다.</li>
+                    <li><strong>실행 순서:</strong> 단계별 절차를 <code>Step 1.</code>, <code>Step 2.</code> 와 같이 <code>Step n.</code> 형식의 번호 목록으로 작성하며, 완전한 문장으로 설명합니다.</li>
+                    <li><strong>화면 구성:</strong> 특별히 동작을 실행하지 않지만 화면 전체를 이해해야 할 필요가 있는 경우 <code>X 탭</code>, <code>X 패널</code>, <code>X 섹션</code>과 같이 주요 영역을 설명하며, '-' 기호를 사용하는 불릿 포인트로 작성합니다.</li>
+                    <li><strong>센스리더 팁:</strong> 스크린리더 사용자를 위한 팁을 제공하며, 각 항목은 <code>-</code> 기호를 사용하는 불릿 포인트로 작성하고, 완전한 문장 형태로 서술합니다. 항목 아래 세부 항목을 만들지 않습니다.</li>
+                </ul>
 
-                <hr class="guideline-divider">
-
-                <h3>자주 묻는 질문과 답변(FAQ)</h3>
-                <p>(사용자가 자주 묻는 질문과 답변을 Q&A 형식으로 작성합니다. 번호를 부여하지 않고 독립 섹션으로 제시합니다.)</p>
-
-                <p><strong>Q1:</strong> (질문 내용)<br>
-                (답변 내용)</p>
-
-                <p><strong>Q2:</strong> (질문 내용)<br>
-                (답변 내용)</p>
-
-                <hr class="guideline-divider">
-
-                <h3>요약</h3>
-                <p>(서비스의 핵심 기능과 스크린 리더 활용 팁을 정리합니다. 번호를 부여하지 않고 독립 섹션으로 제시합니다. 핵심 기능, 센스리더 효율적 탐색 방법, 주요 장점 등을 항목화하여 정리합니다.)</p>
+                <h3>5. 키보드 키 표기법</h3>
+                <ul>
+                    <li><strong>동작 키:</strong> 사용자의 특정 동작을 유발하는 중요한 키(예: <strong>엔터</strong>, <strong>스페이스</strong>, <strong>Ctrl+C</strong>)나 단축키(<strong>Ctrl+Shift+F12</strong>)는 두 개의 별표(<code>**</code>)로 감싸 굵게 표시합니다.</li>
+                    <li><strong>탐색 키:</strong> 단순 탐색에 사용되는 키(예: H, F2, 방향키, Tab)는 굵게 표시하지 않고 그대로 작성합니다.</li>
+                </ul>
             </div>
         </div>
 
         <!-- 본 챕터 제목 -->
         <header class="chapter-title">
-            <h1>시각장애 교원을 위한 NotebookLM 사용법 안내</h1>
+            <h1>노트북LM 사용법 안내</h1>
         </header>
 
         <main id="main-content">
@@ -506,640 +399,516 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="intro-content" class="collapsible-content" aria-labelledby="intro-title" aria-hidden="true">
-                    <p>NotebookLM은 구글에서 제공하는 AI 기반 연구 및 학습 보조 도구입니다. 사용자가 업로드한 문서, 웹사이트, 오디오 파일 등의 소스 자료를 AI가 분석하여 요약, 질의응답, 학습 자료 생성 등 다양한 기능을 제공합니다. 일반 AI 챗봇과 달리 사용자가 제공한 소스에만 근거하여 답변하므로 정보의 정확성과 신뢰성이 높습니다. 대부분의 기능은 무료이며, 교육용 구글 계정(센메일 등)으로도 사용할 수 있습니다.</p>
+                    <p>노트북LM(NotebookLM)은 구글이 출시한 인공지능 기반 연구 및 학습 보조 도구입니다. 노트북LM은 사용자가 업로드한 문서, 웹사이트, 오디오 파일 등 신뢰할 수 있는 자료만을 바탕으로 내용을 요약하고, 질문에 답변하며, 다양한 학습 자료를 만들어주는 효율적인 수업 연구 도구입니다. 일반 AI 챗봇과 달리 사용자가 제공한 자료에만 근거하여 답변하므로, 정보의 정확성과 신뢰성이 매우 높습니다. 교육용 구글 계정(센메일 등)으로도 모든 기능을 무료로 사용할 수 있습니다.</p>
 
-                    <p>NotebookLM의 주요 특징은 다양한 출력 형식을 지원한다는 점입니다. AI 오디오 오버뷰 기능은 텍스트 자료를 두 명의 AI 음성이 자연스럽게 대화하는 팟캐스트로 변환하여, 시각적 부담 없이 청각적으로 학습할 수 있도록 돕습니다. 또한 보고서, 플래시카드, 마인드맵 등 다양한 학습 자료를 자동으로 생성하여 수업 준비 시간을 크게 절약할 수 있습니다.</p>
+                    <p>특히 노트북LM은 2024년 9월에 AI 오디오 오버뷰 기능이 추가되며 구글의 대표적 AI 애플리케이션으로 자리잡았습니다. AI 오디오 오버뷰는 텍스트 자료를 두 명의 AI 음성이 대화하는 팟캐스트로 변환하여 시각적 부담 없이 귀로 편안하게 자료를 검토할 수 있도록 돕는 기능입니다. 또한 보고서, 플래시카드, 마인드맵 등 다양한 학습 자료를 자동으로 생성하여 수업 준비 시간을 크게 절약해 줍니다. 웹 접근성 측면에서도 논리적인 헤딩 구조와 키보드 탐색을 잘 지원하여 스크린리더 사용자가 효율적으로 이용할 수 있습니다.</p>
 
-                    <p>웹 접근성 측면에서 NotebookLM은 명확한 헤딩 구조(H1, H2)와 논리적인 탭 순서를 제공하여 센스리더로 효율적으로 탐색할 수 있습니다. 화면은 "출처", "채팅", "스튜디오" 3개 패널로 구성되며, <kbd>H</kbd> 키로 각 패널 간 빠르게 이동할 수 있습니다. 대부분의 주요 기능은 키보드만으로 완전히 제어 가능하며, 버튼과 편집창에는 명확한 레이블이 제공됩니다.</p>
-
-                    <p>시각장애 교원에게 NotebookLM은 연구 자료를 효율적으로 정리하고 분석하며, 학생들을 위한 맞춤형 학습 자료를 신속하게 제작할 수 있는 강력한 도구입니다. 센스리더의 <kbd>H</kbd> 키와 <kbd>Tab</kbd> 키를 활용하면 화면 구조를 빠르게 파악하고 원하는 기능에 접근할 수 있습니다.</p>
+                    <div class="key-points">
+                        <strong>노트북LM에서 자주 사용하는 센스리더 키</strong>
+                        <ul>
+                            <li><strong>숫자 2/Shift+2 키:</strong> 화면의 주요 섹션인 '출처', '채팅', '스튜디오' 패널 단위로 탐색할 때 자주 사용하며 <strong>헤딩 2</strong> 사이를 이동합니다.</li>
+                            <li><strong>N/Shift+N 키:</strong> 채팅 패널에서 자주 사용하며 버튼 간에 빠르게 이동합니다.</li>
+                            <li><strong>F2/Shift+F2 키:</strong> 노트북 제목, 채팅 쿼리 창, 보고서 제목 등의 편집창(입력 필드) 간에 빠르게 이동합니다.</li>
+                            <li><strong>Ctrl+Shift+F11/F12 키:</strong> 채팅 입력, 미디어 플레이어 탐색, 보고서 뷰어 탐색 등에서는 가상 커서를 해제하고 사용합니다.</li>
+                            <li><strong>Ctrl+Home/End 키:</strong> 동작 후 포커스가 원래 있던 위치를 벗어나면 페이지 맨 위 또는 아래로 이동합니다.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- 1. NotebookLM 시작하기 -->
+            <!-- 1. 로그인 및 새 노트북 만들기 -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section1-content">
-                    <h2 id="section1">1. NotebookLM 시작하기</h2>
+                    <h2 id="section1">1. 로그인 및 새 노트북 만들기 🚀</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section1-content" class="collapsible-content" aria-labelledby="section1" aria-hidden="true">
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section1-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section1-1-content">
-                        <h3 id="section1-1">1-1. 접속 및 로그인</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section1-1-content" class="collapsible-content" aria-labelledby="section1-1" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>NotebookLM은 웹 브라우저에서 작동하는 온라인 서비스로, 별도의 프로그램 설치 없이 notebooklm.google.com 주소로 접속하여 바로 사용할 수 있습니다. 구글 계정이 있으면 누구나 무료로 이용 가능하며, 개인 계정뿐만 아니라 교육용 구글 계정(센메일 등)으로도 로그인할 수 있습니다. 접속 후 "새 노트 만들기" 버튼을 통해 개별 프로젝트를 시작할 수 있습니다.</p>
-                    </div>
+                    <p>노트북LM은 별도의 프로그램 설치 없이 웹 브라우저에서 <code>노트북LM.구글.com</code> 주소로 접속하여 바로 사용할 수 있는 온라인 서비스입니다. 구글 계정만 있으면 누구나 무료로 이용 가능하며, 교육용 구글 계정(센메일 등)으로도 로그인할 수 있습니다.</p>
 
                     <div>
                         <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. 브라우저 주소창에 notebooklm.google.com을 입력한 후 엔터 키를 누릅니다.</li>
-                            <li>Step 2. 구글 계정으로 로그인합니다.</li>
-                        </ul>
-                    </div>
-
-                    <div class="screen-structure">
-                        <span class="section-label screen">화면 구조</span>
-                        <ul>
-                            <li>NotebookLM에 오신 것을 환영합니다 Heading 1</li>
-                            <li>새 노트 만들기 버튼 (화면 중앙)</li>
-                            <li>설정 버튼 (우측 상단)</li>
-                        </ul>
-                    </div>
-
-                    <div class="tip-box">
-                        <span class="section-label tip">센스리더 팁</span>
-                        <p><kbd>H</kbd> 키를 눌러 H1 헤딩으로 바로 이동할 수 있습니다. <kbd>Tab</kbd> 키로 "새 노트 만들기" 버튼에 접근합니다.</p>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section1-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section1-2-content">
-                        <h3 id="section1-2">1-2. 새 노트북 만들기</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section1-2-content" class="collapsible-content" aria-labelledby="section1-2" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>'노트북'은 특정 주제나 프로젝트에 대한 독립적인 작업 공간입니다. 각 노트북은 고유한 소스 자료(PDF, 웹페이지 등)와 AI 채팅 기록, 생성된 학습 자료를 포함합니다. 수업별, 연구 주제별로 노트북을 따로 만들어 관리할 수 있으며, 하나의 노트북에는 최대 50개의 소스를 추가할 수 있습니다. 각 소스는 최대 500,000 단어까지 지원합니다. 노트북을 만들면 "출처", "채팅", "스튜디오" 3개 패널로 구성된 메인 작업 화면으로 전환됩니다.</p>
+                        <p>Step 1. 브라우저 주소창에 <code>notebooklm.google.com</code>을 입력한 후 엔터 키를 누릅니다.</p>
+                        <p>Step 2. 구글 계정으로 로그인합니다.</p>
+                        <p>Step 3. 화면 중앙의 "새 노트 만들기" 버튼을 눌러 새 노트북을 시작합니다.</p>
+                        <p>Step 4. 자동으로 "소스 추가" 화면으로 전환되며, 노트북 제목은 "Untitled notebook"으로 기본 설정됩니다.</p>
                     </div>
 
                     <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>Tab</kbd> 키를 눌러 "새 노트 만들기" 버튼으로 이동합니다.</li>
-                            <li>Step 2. 엔터 키를 눌러 실행합니다.</li>
-                            <li>Step 3. 자동으로 메인 작업 화면으로 전환됩니다.</li>
-                        </ul>
-                    </div>
-
-                    <div class="screen-structure">
-                        <span class="section-label screen">화면 구조 - 메인 작업 화면</span>
-                        <p>화면은 좌우로 3개 패널로 구성됩니다:</p>
-
-                        <h4>왼쪽: 출처 패널 (약 25%)</h4>
-                        <ul>
-                            <li>출처 Heading 2</li>
-                            <li>추가 버튼 (소스 추가)</li>
-                            <li>탐색 버튼 (소스 검색)</li>
-                            <li>모든 출처 선택 체크박스</li>
-                            <li>소스 목록 (추가된 소스가 표시됨)</li>
-                        </ul>
-
-                        <h4>중앙: 채팅 패널 (약 48%)</h4>
-                        <ul>
-                            <li>채팅 Heading 2</li>
-                            <li>AI와 대화하는 멀티라인 편집창</li>
-                            <li>소스 업로드 버튼 (소스 없을 때 중앙에 표시)</li>
-                            <li>노트북 구성 버튼 (우측 상단)</li>
-                        </ul>
-
-                        <h4>우측: 스튜디오 패널 (약 25%)</h4>
-                        <ul>
-                            <li>스튜디오 Heading 2</li>
-                            <li>AI 오디오 오버뷰 버튼 (파란색)</li>
-                            <li>동영상 개요 버튼 (초록색)</li>
-                            <li>마인드맵 버튼 (분홍색)</li>
-                            <li>보고서 버튼 (노란색)</li>
-                            <li>플래시카드 버튼 (주황색)</li>
-                        </ul>
-
-                        <h4>상단 헤더</h4>
-                        <ul>
-                            <li>노트북 제목 편집창 (기본: "Untitled notebook")</li>
-                            <li>공유 버튼 (우측 상단)</li>
-                            <li>설정 버튼 (최우측 상단)</li>
-                        </ul>
-                    </div>
-
-                    <div class="tip-box">
                         <span class="section-label tip">센스리더 팁</span>
-                        <p><kbd>H</kbd> 키를 반복해서 눌러 "출처", "채팅", "스튜디오" 세 헤딩을 탐색합니다. 각 헤딩에서 <kbd>Tab</kbd> 키로 하위 버튼에 접근합니다.</p>
+                        <ul>
+                            <li>최초 접속 시 페이지 로딩 후 다음 헤딩으로 이동하는 <strong>H 키</strong>를 누르면 "노트북LM에 오신 것을 환영합니다"라는 기본 헤딩(H1)으로 바로 이동할 수 있습니다.</li>
+                            <li><strong>탭 키</strong>를 한 번 누르면 "새 노트 만들기" 버튼으로 쉽게 접근할 수 있으며 엔터 키 또는 스페이스 키로 새 노트북을 생성합니다.</li>
+                            <li>이후 접속부터는 첫 화면에 기존에 생성한 노트북 목록이 나타나며 이 목록에서 기존 노트북을 선택하거나 삭제하는 등의 동작을 수행할 수 있습니다.</li>
+                            <li>이미 노트북이 있는 상태에서 새 노트북을 만들려면 화면 상단에서 다음 텍스트로 이동하는 <strong>F4 키</strong>를 한 번 눌러 '최근 노트북'으로 이동합니다.</li>
+                            <li>위 또는 아래 방향키를 누르면 "새 노트 만들기" 버튼이 나오며 이 중 어느 것을 선택하더라도 새 노트북을 생성할 수 있습니다.</li>
+                            <li><strong>Ctrl+Home 키</strong>로 페이지 최상단으로 올라가면 "Untitled notebook - NotebookLM"이라고 나타납니다.</li>
+                            <li>새 노트북이 생성되면 화면에는 "소스 추가" 대화상자가 열립니다. "대화상자 닫기" 버튼이 나타나며 아래로 다양한 소스 추가 컨트롤이 펼쳐집니다.</li>
+                        </ul>
                     </div>
-                    </div>
-                </div>
 
+                    <p>컨트롤별 자세한 소스 추가 방법은 다음 섹션에서 설명합니다.</p>
                 </div>
             </div>
 
             <!-- 2. 소스 추가하기 -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-content">
-                    <h2 id="section2">2. 소스(학습 자료) 추가하기</h2>
+                    <h2 id="section2">2. 소스 추가하기 📚</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section2-content" class="collapsible-content" aria-labelledby="section2" aria-hidden="true">
+                    <p>노트북LM의 모든 작업은 '소스'를 기반으로 이루어집니다. 소스에 따라 노트북을 수업별, 연구 주제별로 따로 만들어 관리할 수 있습니다. 무료 버전에서는 노트북당 최대 50개의 소스(각 50만 단어 또는 200MB 이하 파일)를 추가할 수 있습니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section2-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-1-content">
-                        <h3 id="section2-1">2-1. 파일 업로드</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section2-1-content" class="collapsible-content" aria-labelledby="section2-1" aria-hidden="true">
+                    <!-- 2.1. 소스 검색 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section2-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-1-content">
+                            <h3 id="section2-1">2.1. 소스 검색 (웹 검색)</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section2-1-content" class="collapsible-content" aria-labelledby="section2-1" aria-hidden="true">
+                            <p>별도의 브라우저 창을 열지 않고 노트북LM 내에서 직접 구글 검색을 통해 자료를 찾아 소스로 추가하는 기능입니다. 웹에 있는 최신 정보나 다양한 관점의 자료를 빠르게 수집할 때 유용합니다.</p>
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>NotebookLM은 다양한 형식의 문서와 오디오 파일을 소스로 추가할 수 있습니다. 지원되는 파일 형식은 PDF, Word 문서(.docx), 텍스트 파일(.txt), 마크다운 파일(.md), 오디오 파일(.mp3, .wav 등), 구글 문서, 구글 슬라이드입니다. 한 번에 여러 파일을 선택하여 업로드할 수 있으며, 구글 드라이브에 저장된 파일도 직접 가져올 수 있습니다. 업로드된 소스는 AI가 자동으로 분석하여 채팅, 요약, 학습 자료 생성 등 다양한 기능의 기초 자료로 활용됩니다. 파일 업로드는 출처 패널의 "추가" 버튼을 통해 진행하며, 업로드된 소스는 목록으로 표시되어 개별적으로 선택하거나 삭제할 수 있습니다.</p>
-                    </div>
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. '출처' 패널에서 '탐색' 버튼을 찾아 실행합니다.</p>
+                                <p>Step 2. 검색어 입력창에 원하는 키워드를 입력합니다.</p>
+                                <p>Step 3. 검색 결과 목록에서 소스로 추가할 자료를 선택합니다.</p>
+                                <p>Step 4. 화면 하단의 '가져오기' 버튼을 눌러 선택한 자료를 출처에 추가합니다.</p>
+                            </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "출처" 헤딩(H2)으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "추가" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 소스 추가 대화상자를 엽니다.</li>
-                            <li>Step 4. <kbd>Tab</kbd> 키를 눌러 "파일" 옵션을 선택합니다.</li>
-                            <li>Step 5. 파일 선택 대화상자에서 파일을 선택합니다. (여러 개 선택 가능)</li>
-                            <li>Step 6. "열기" 버튼을 눌러 파일을 업로드합니다.</li>
-                        </ul>
-                    </div>
-
-                    <div class="tip-box">
-                        <span class="section-label tip">센스리더 팁</span>
-                        <p>여러 파일을 한 번에 선택하려면 <kbd>Ctrl</kbd> 키를 누른 채 파일을 선택합니다.</p>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section2-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-2-content">
-                        <h3 id="section2-2">2-2. 웹사이트 및 유튜브 링크 추가</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section2-2-content" class="collapsible-content" aria-labelledby="section2-2" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>웹페이지 URL이나 유튜브 영상 링크를 직접 입력하여 해당 콘텐츠를 소스로 추가할 수 있습니다. 웹페이지는 텍스트 콘텐츠가 추출되며, 유튜브 영상은 자막이 자동으로 텍스트로 변환되어 분석 자료로 사용됩니다. 단, 일부 웹사이트는 콘텐츠 수집이 차단될 수 있으며, 유튜브 영상의 경우 자막이 제공되는 영상만 정확히 분석됩니다. 링크를 추가할 때는 전체 URL 주소를 복사하여 붙여넣는 방식으로 진행합니다.</p>
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>H 키로 "출처" 헤딩(H2)으로 이동한 후 탭 키를 눌러 "탐색" 버튼으로 이동하고 <strong>Enter</strong>를 누릅니다.</li>
+                                    <li>"소스 탐색에 사용할 쿼리" 편집창이 나타나면 검색어를 입력하고 탭 키로 "쿼리 제출" 버튼으로 이동하여 <strong>Enter</strong>를 누릅니다.</li>
+                                    <li>검색 결과 목록이 나타나면, 각 결과의 체크박스에서 <strong>스페이스바</strong>로 원하는 자료를 선택합니다. 기본적으로는 10개의 소스가 나타나며 모두 선택되어 있습니다.</li>
+                                    <li>탭 키로 페이지 하단의 "가져오기" 버튼까지 이동한 후 <strong>Enter</strong>를 누르면 선택한 자료들이 한꺼번에 출처에 추가됩니다.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "출처" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "추가" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 대화상자를 엽니다.</li>
-                            <li>Step 4. "웹사이트" 또는 "YouTube 동영상"을 선택합니다.</li>
-                            <li>Step 5. URL 편집창에 링크를 붙여넣습니다. (<kbd>Ctrl+V</kbd>)</li>
-                            <li>Step 6. "삽입" 버튼을 눌러 추가합니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+                    <!-- 2.2. 컴퓨터에서 소스 업로드 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section2-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-2-content">
+                            <h3 id="section2-2">2.2. 컴퓨터에서 소스 업로드</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section2-2-content" class="collapsible-content" aria-labelledby="section2-2" aria-hidden="true">
+                            <p>컴퓨터에 저장된 문서나 구글 드라이브의 파일을 소스로 추가할 수 있습니다. PDF, 워드(.docx), 텍스트(.txt), 오디오(.mp3, .wav) 등 다양한 형식의 파일을 지원합니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section2-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-3-content">
-                        <h3 id="section2-3">2-3. 텍스트 복사 붙여넣기</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section2-3-content" class="collapsible-content" aria-labelledby="section2-3" aria-hidden="true">
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. '출처' 패널에서 '추가' 버튼을 실행합니다.</p>
+                                <p>Step 2. 열리는 메뉴에서 '파일' 또는 'Google 드라이브'를 선택합니다.</p>
+                                <p>Step 3. 파일 선택 대화상자에서 원하는 파일을 선택합니다. (Ctrl 키를 누른 채 여러 파일 선택 가능)</p>
+                                <p>Step 4. '열기' 버튼을 눌러 파일을 업로드합니다.</p>
+                            </div>
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>웹사이트나 다른 문서의 일부 텍스트를 직접 복사하여 소스로 추가하는 기능입니다. 긴 문서 중 특정 부분만 빠르게 자료로 만들고 싶을 때 유용합니다. 추가된 텍스트는 기본적으로 "붙여넣은 텍스트"라는 제목으로 저장되며, 나중에 제목을 변경할 수 있습니다. 이 방법은 파일로 저장되지 않은 텍스트나, 복사 가능한 온라인 콘텐츠를 빠르게 소스로 만들 때 효과적입니다.</p>
-                    </div>
-
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. 원하는 텍스트를 다른 곳에서 복사합니다. (<kbd>Ctrl+C</kbd>)</li>
-                            <li>Step 2. <kbd>H</kbd> 키를 눌러 "출처" 헤딩으로 이동합니다.</li>
-                            <li>Step 3. <kbd>Tab</kbd> 키를 눌러 "추가" 버튼으로 이동합니다.</li>
-                            <li>Step 4. "복사된 텍스트"를 선택합니다.</li>
-                            <li>Step 5. 멀티라인 편집창에 붙여넣습니다. (<kbd>Ctrl+V</kbd>)</li>
-                            <li>Step 6. "삽입" 버튼을 눌러 추가합니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section2-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-4-content">
-                        <h3 id="section2-4">2-4. 소스 검색</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section2-4-content" class="collapsible-content" aria-labelledby="section2-4" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>NotebookLM 내에서 직접 키워드를 검색하여 관련 웹 자료를 찾아 소스로 추가하는 기능입니다. 구글 검색 엔진을 기반으로 하며, 검색 결과 10개가 체크박스와 함께 표시됩니다. 원하는 검색 결과를 체크박스로 선택한 후 페이지 하단의 "가져오기" 버튼을 누르면 선택한 자료들이 한꺼번에 출처에 추가됩니다. 명확하고 구체적인 검색어를 사용하면 더 정확한 결과를 얻을 수 있습니다. 이 기능은 특정 주제에 대한 웹 자료를 빠르게 수집할 때 유용하며, 별도의 브라우저 검색 없이 NotebookLM 내에서 자료 수집을 완료할 수 있습니다.</p>
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>H 키로 "출처" 헤딩으로 이동한 후 탭 키로 "추가" 버튼으로 이동하여 <strong>Enter</strong>를 누릅니다.</li>
+                                    <li>방향키로 "파일" 또는 "Google 드라이브"를 선택하고 <strong>Enter</strong>를 누릅니다.</li>
+                                    <li>파일 선택 대화상자는 일반적인 Windows 탐색기와 동일하게 작동하므로, 익숙한 방식으로 파일을 찾아 선택하고 <strong>Enter</strong>를 누릅니다.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "출처" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "탐색" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 검색 화면을 엽니다.</li>
-                            <li>Step 4. 검색어를 입력한 후 엔터 키를 누릅니다.</li>
-                            <li>Step 5. 검색 결과 10개가 체크박스와 함께 표시됩니다.</li>
-                            <li>Step 6. <kbd>Tab</kbd> 키를 눌러 원하는 결과의 체크박스를 선택합니다.</li>
-                            <li>Step 7. 페이지 하단의 "가져오기" 버튼을 눌러 선택한 자료를 한꺼번에 출처에 추가합니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+                    <!-- 2.3. 웹사이트 및 유튜브 링크 추가 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section2-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-3-content">
+                            <h3 id="section2-3">2.3. 웹사이트 및 유튜브 링크 추가</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section2-3-content" class="collapsible-content" aria-labelledby="section2-3" aria-hidden="true">
+                            <p>웹페이지 주소(URL)나 유튜브 영상 링크를 소스로 추가할 수 있습니다. 웹페이지는 본문 내용이, 유튜브 영상은 자막이 텍스트로 자동 추출되어 분석 자료로 사용됩니다.</p>
 
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. '출처' 패널의 '추가' 버튼을 실행합니다.</p>
+                                <p>Step 2. '웹사이트' 또는 'YouTube 동영상'을 선택합니다.</p>
+                                <p>Step 3. URL 편집창에 준비된 링크를 붙여넣고 '삽입' 버튼을 누릅니다.</p>
+                            </div>
+
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>'추가' 버튼을 실행한 후 방향키로 '웹사이트' 또는 'YouTube 동영상'을 선택하고 <strong>Enter</strong>를 누릅니다.</li>
+                                    <li>나타나는 편집창에 <strong>Ctrl+V</strong>로 링크를 붙여넣습니다.</li>
+                                    <li>탭 키로 '삽입' 버튼으로 이동하여 <strong>Enter</strong>를 누릅니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.4. 텍스트 복사 붙여넣기 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section2-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-4-content">
+                            <h3 id="section2-4">2.4. 텍스트 복사 붙여넣기</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section2-4-content" class="collapsible-content" aria-labelledby="section2-4" aria-hidden="true">
+                            <p>웹사이트나 다른 문서의 일부 텍스트만 빠르게 자료로 만들고 싶을 때 유용합니다. 필요한 부분만 간추려 소스로 활용할 수 있습니다.</p>
+
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. 원하는 텍스트를 다른 곳에서 복사합니다. (Ctrl+C)</p>
+                                <p>Step 2. '출처' 패널의 '추가' 버튼에서 '복사된 텍스트'를 선택합니다.</p>
+                                <p>Step 3. 나타나는 편집창에 텍스트를 붙여넣고(Ctrl+V) '삽입' 버튼을 누릅니다.</p>
+                            </div>
+
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>'추가' 버튼 실행 후 방향키로 '복사된 텍스트'를 선택하고 <strong>Enter</strong>를 누릅니다.</li>
+                                    <li>편집창에 <strong>Ctrl+V</strong>로 텍스트를 붙여넣은 후 탭 키로 '삽입' 버튼으로 이동하여 <strong>Enter</strong>를 누릅니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.5. 노트북 화면 탐색 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section2-5')" role="button" tabindex="0" aria-expanded="false" aria-controls="section2-5-content">
+                            <h3 id="section2-5">2.5. 노트북 화면 탐색</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section2-5-content" class="collapsible-content" aria-labelledby="section2-5" aria-hidden="true">
+                            <p>소스 추가가 완료되면 노트북 메인 작업 화면이 자동으로 구성됩니다. 메인 작업 화면은 크게 3개의 패널로 나뉘며, 각 패널은 독립적인 기능을 수행합니다.</p>
+
+                            <div>
+                                <span class="section-label screen">화면 구성</span>
+                                <ul>
+                                    <li><strong>왼쪽: 출처 패널 (헤딩 2):</strong> 학습 자료(소스)를 추가하고 관리하는 곳입니다.</li>
+                                    <li><strong>중앙: 채팅 패널 (헤딩 2):</strong> AI와 대화하며 질문하고 답변을 받는 메인 공간입니다.</li>
+                                    <li><strong>오른쪽: 스튜디오 패널 (헤딩 2):</strong> AI 오디오, 보고서 등 다양한 결과물을 생성하는 곳입니다.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>헤딩 레벨 2 단위로 이동하는 <strong>숫자 2</strong> 키를 누르면서 '출처' ↔ '채팅' ↔ '스튜디오' 패널 간에 빠르게 이동하며 구조를 파악할 수 있습니다. 이는 노트북LM 탐색의 핵심입니다.</li>
+                                    <li>각 패널 헤딩으로 이동한 후 탭 키를 누르면 해당 패널에 속한 버튼이나 입력창 등 하위 요소들을 순서대로 탐색할 수 있습니다.</li>
+                                </ul>
+                            </div>
+
+                            <p>이제 소스를 기반으로 AI와 대화하는 방법을 다음 섹션에서 알아보겠습니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 3. 채팅 패널 -->
+            <!-- 3. 채팅 패널 - AI와 대화하기 -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-content">
-                    <h2 id="section3">3. 채팅 패널 - AI와 대화하기</h2>
+                    <h2 id="section3">3. 채팅 패널 - AI와 대화하기 💬</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section3-content" class="collapsible-content" aria-labelledby="section3" aria-hidden="true">
+                    <p>채팅 패널은 추가된 소스 자료에 대해 AI와 자유롭게 대화하며 정보를 얻는 핵심 공간입니다. AI는 사용자가 제공한 자료 안에서만 답변하므로 신뢰도가 높으며, 각 답변에는 출처 번호([1], [2])가 표시되어 어떤 자료의 어느 부분에서 정보를 가져왔는지 즉시 확인할 수 있습니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section3-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-1-content">
-                        <h3 id="section3-1">3-1. AI와 질문하고 답변 받기</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section3-1-content" class="collapsible-content" aria-labelledby="section3-1" aria-hidden="true">
+                    <!-- 3.1. AI에게 질문하고 답변 받기 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section3-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-1-content">
+                            <h3 id="section3-1">3.1. AI에게 질문하고 답변 받기</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section3-1-content" class="collapsible-content" aria-labelledby="section3-1" aria-hidden="true">
+                            <p>채팅 패널의 질문 입력창을 통해 소스 내용에 대해 궁금한 점을 무엇이든 물어볼 수 있습니다. AI는 소스를 분석하여 가장 관련성 높은 답변을 생성해 줍니다.</p>
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>채팅 패널은 NotebookLM의 핵심 기능으로, 업로드한 소스 자료에 대해 AI와 대화하며 정보를 얻을 수 있습니다. 일반 AI 챗봇과 달리 사용자가 제공한 소스에만 근거하여 답변하므로 정보의 정확성이 높고 AI 환각(Hallucination) 현상이 최소화됩니다. 각 답변에는 출처 번호([1], [2] 등)가 표시되어 어떤 소스의 어느 부분에서 정보를 가져왔는지 확인할 수 있습니다. 질문과 답변 기록은 자동으로 저장되며, 나중에 다시 확인할 수 있습니다. 채팅 패널에서는 자유롭게 자연어로 질문할 수 있으며, AI는 업로드된 모든 소스를 종합하여 답변을 제공합니다.</p>
-                    </div>
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. "채팅" 패널로 이동합니다.</p>
+                                <p>Step 2. "AI와 대화" 편집창에 질문을 입력합니다.</p>
+                                <p>Step 3. <strong>Enter</strong> 키를 눌러 질문을 제출합니다.</p>
+                                <p>Step 4. AI의 답변이 생성되면 내용을 확인합니다. 답변에 포함된 출처 번호 링크를 실행하면 원본 내용을 팝업으로 확인할 수 있습니다.</p>
+                            </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "채팅" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 멀티라인 편집창으로 이동합니다.</li>
-                            <li>Step 3. 질문을 입력한 후 엔터 키를 누릅니다.</li>
-                            <li>Step 4. AI 답변을 확인합니다.</li>
-                            <li>Step 5. 답변의 출처 번호([1], [2] 등)를 클릭하여 원본을 확인할 수 있습니다.</li>
-                        </ul>
-                    </div>
-
-                    <div class="screen-structure">
-                        <span class="section-label screen">화면 구조 - 채팅 진행 중</span>
-                        <ul>
-                            <li>사용자 질문 영역 (배경색 구분)</li>
-                            <li>AI 답변 영역 (출처 번호 포함)</li>
-                            <li>메모에 저장 버튼 (답변 하단)</li>
-                            <li>요약 복사 버튼 (답변 하단)</li>
-                            <li>제안 질문 버튼들 (답변 하단)</li>
-                        </ul>
-                    </div>
-
-                    <div class="tip-box">
-                        <span class="section-label tip">센스리더 팁</span>
-                        <p>AI 답변 영역에서 사용자가 질문한 프롬프트는 h3 헤딩으로 구분되므로 <kbd>H</kbd> 키로 탐색하면 편리합니다. 출처 번호를 클릭하면 해당 소스의 해당 부분이 팝업으로 표시됩니다.</p>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section3-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-2-content">
-                        <h3 id="section3-2">3-2. AI 답변 활용하기</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section3-2-content" class="collapsible-content" aria-labelledby="section3-2" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>AI가 생성한 답변은 다양한 방식으로 활용할 수 있습니다. "메모에 저장" 기능으로 유용한 답변을 노트북 내에 영구적으로 보관할 수 있으며, 저장된 메모는 다시 소스로 전환하여 추가 분석의 재료로 사용할 수 있습니다. "요약 복사" 기능으로 답변 내용을 클립보드에 복사하여 다른 문서에 붙여넣을 수도 있습니다. AI가 답변 하단에 제안하는 추가 질문을 클릭하면 관련 주제를 더 깊이 탐구할 수 있습니다. 저장된 메모는 학습 과정에서 얻은 중요한 결과나 인사이트를 별도로 정리하고, 이를 다시 심화 분석의 재료로 사용하는 선순환 구조를 만드는 데 효과적입니다.</p>
-                    </div>
-
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <h4>메모 저장:</h4>
-                        <ul>
-                            <li>Step 1. AI 답변 하단의 "메모에 저장" 버튼을 눌러 저장합니다.</li>
-                            <li>Step 2. 저장된 메모는 우측에 목록으로 표시됩니다.</li>
-                            <li>Step 3. 메모의 "더보기" 메뉴(<kbd>Shift+F10</kbd>)에서 "소스로 전환"을 선택할 수 있습니다.</li>
-                        </ul>
-
-                        <h4>요약 복사:</h4>
-                        <ul>
-                            <li>Step 1. 답변 하단의 "요약 복사" 버튼을 클릭합니다.</li>
-                            <li>Step 2. 클립보드에 복사됩니다.</li>
-                            <li>Step 3. 다른 문서에서 <kbd>Ctrl+V</kbd>를 눌러 붙여넣습니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section3-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-3-content">
-                        <h3 id="section3-3">3-3. 채팅 패널에서 학습 자료 생성하기</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section3-3-content" class="collapsible-content" aria-labelledby="section3-3" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>채팅 패널에는 소스 자료를 바탕으로 다양한 학습 자료를 빠르게 생성할 수 있는 버튼들이 포함되어 있습니다. AI 답변 영역 하단에는 "동영상 개요", "마인드맵" 등의 버튼이 표시되며, 이를 클릭하면 해당 형식의 학습 자료가 자동으로 생성됩니다. 생성된 자료는 채팅창에 직접 표시되거나 스튜디오 패널로 이동하여 확인할 수 있습니다. 채팅 패널에서 바로 생성할 수 있는 자료들은 현재 대화 맥락과 관련된 내용으로 자동 생성되므로, 특정 주제에 집중한 학습 자료를 만들 때 유용합니다.</p>
-                    </div>
-
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. AI와 대화를 진행합니다.</li>
-                            <li>Step 2. 답변 하단의 학습 자료 생성 버튼 중 하나를 선택합니다.
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
                                 <ul>
-                                    <li>"동영상 개요" 버튼</li>
-                                    <li>"마인드맵" 버튼</li>
+                                    <li><strong>숫자 2</strong> 키로 "채팅" 헤딩으로 이동합니다.</li>
+                                    <li>편집창으로 이동하는 F2 키나 탭 키를 눌러 "AI와 대화" 멀티라인 편집창으로 이동합니다.</li>
+                                    <li>질문 입력 후 <strong>Enter</strong> 키를 누르면 제출됩니다.</li>
+                                    <li>AI의 답변은 헤딩 3 레벨로 구조화되어 있으므로, <strong>숫자 3</strong> 키로 질문과 답변 사이를 빠르게 오가며 탐색하면 편리합니다.</li>
                                 </ul>
-                            </li>
-                            <li>Step 3. 생성이 완료될 때까지 대기합니다.</li>
-                            <li>Step 4. 결과를 확인합니다.</li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
 
+                    <!-- 3.2. AI 답변 활용하기 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section3-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section3-2-content">
+                            <h3 id="section3-2">3.2. AI 답변 활용하기</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section3-2-content" class="collapsible-content" aria-labelledby="section3-2" aria-hidden="true">
+                            <p>AI가 생성한 답변은 단순 확인에 그치지 않고 다양하게 활용할 수 있습니다. 답변을 메모에 저장하여 영구 보관하거나, 다른 문서에 활용하기 위해 복사할 수 있습니다. 저장된 메모는 다시 '소스로 전환'하여 추가 분석의 재료로 사용할 수도 있습니다.</p>
+
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. AI 답변 하단에 있는 "메모에 저장" 또는 "요약 복사" 버튼을 찾아 실행합니다.</p>
+                                <p>Step 2. "메모에 저장"을 누르면 답변 내용이 별도의 메모로 저장됩니다.</p>
+                                <p>Step 3. "요약 복사"를 누르면 답변 내용이 클립보드에 복사됩니다.</p>
+                            </div>
+
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>답변 아래에 있는 추가 기능들은 버튼 탐색 키인 N 키를 사용하여 "메모에 저장", "요약 복사" 등으로 빠르게 접근할 수 있습니다.</li>
+                                    <li>원하는 버튼에서 <strong>Enter</strong> 키를 눌러 기능을 실행합니다.</li>
+                                </ul>
+                            </div>
+
+                            <p>이제 채팅을 넘어 소스를 다채로운 학습 자료로 만드는 스튜디오 패널에 대해 알아보겠습니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 4. 스튜디오 패널 -->
+            <!-- 4. 스튜디오 패널 - 학습 자료 생성하기 -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-content">
-                    <h2 id="section4">4. 스튜디오 패널 - 학습 자료 생성하기</h2>
+                    <h2 id="section4">4. 스튜디오 패널 - 학습 자료 생성하기 🎨</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section4-content" class="collapsible-content" aria-labelledby="section4" aria-hidden="true">
+                    <p>스튜디오 패널에서는 소스 자료 전체를 바탕으로 AI 오디오, 보고서, 마인드맵, 퀴즈 등 다양한 형태의 결과물을 만들 수 있습니다. 복잡한 자료를 쉽고 흥미로운 형태로 가공하여 수업 준비나 개인 학습에 바로 활용할 수 있습니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section4-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-1-content">
-                        <h3 id="section4-1">4-1. AI 오디오 오버뷰 (팟캐스트) 생성</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section4-1-content" class="collapsible-content" aria-labelledby="section4-1" aria-hidden="true">
+                    <!-- 4.1. AI 오디오 오버뷰 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section4-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-1-content">
+                            <h3 id="section4-1">4.1. AI 오디오 오버뷰 (팟캐스트) 생성</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section4-1-content" class="collapsible-content" aria-labelledby="section4-1" aria-hidden="true">
+                            <p>노트북LM의 가장 특별한 기능으로, 소스 자료의 핵심 내용을 두 명의 AI 음성이 대화하는 팟캐스트 형식의 오디오로 만들어줍니다. 텍스트 자료를 귀로 편안하게 들을 수 있어 시각적 부담을 크게 줄여줍니다. 생성된 오디오는 MP3 파일로 다운로드하여 수업 자료로 활용하거나 이동 중에 들을 수 있습니다.</p>
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>AI 오디오 오버뷰는 NotebookLM의 가장 인기 있는 기능 중 하나로, 업로드된 소스 자료의 핵심 내용을 두 명의 AI 음성이 자연스럽게 대화하는 팟캐스트 형식의 오디오로 만들어줍니다. 한국어를 포함한 80여 개 언어를 지원하며, 생성된 오디오는 5~15분 길이로 자동 생성됩니다. 실제 사람이 대화하는 것처럼 자연스러우며, 텍스트 자료를 청각 자료로 변환하여 제공하므로 시각적 부담 없이 내용을 이해하는 데 큰 도움이 됩니다. 생성된 오디오는 MP3 파일로 다운로드하여 수업 자료로 활용하거나 이동 중에 들을 수 있습니다. "맞춤 설정" 기능을 사용하면 특정 주제나 개념에 집중하여 오디오를 생성할 수도 있습니다.</p>
-                    </div>
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. "스튜디오" 패널로 이동합니다.</p>
+                                <p>Step 2. "AI 오디오 오버뷰" 생성 버튼을 찾아 실행합니다.</p>
+                                <p>Step 3. 원하는 형식(예: 토론, 심층 분석)과 길이를 선택합니다.</p>
+                                <p>Step 4. "만들기" 버튼을 눌러 생성을 시작합니다. (약 5~10분 소요)</p>
+                                <p>Step 5. 생성이 완료되면 오디오 플레이어가 나타나며, 바로 재생할 수 있습니다.</p>
+                            </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "스튜디오" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "AI 오디오 오버뷰" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 생성 화면을 엽니다.</li>
-                            <li>Step 4. (선택 사항) "맞춤 설정"을 선택하여 특정 주제를 강조할 수 있습니다.</li>
-                            <li>Step 5. "만들기" 버튼을 눌러 생성을 시작합니다. (1~3분 소요)</li>
-                        </ul>
-                    </div>
-
-                    <div class="screen-structure">
-                        <span class="section-label screen">오디오 플레이어 화면</span>
-                        <ul>
-                            <li>재생/일시정지 버튼 (스페이스바로도 제어 가능)</li>
-                            <li>재생 위치 조절 슬라이더 (좌우 화살표 키)</li>
-                            <li>오디오 플레이어 옵션 더보기 버튼 (재생 속도 변경, 다운로드, 공유 선택 가능)</li>
-                            <li>닫기 버튼</li>
-                        </ul>
-                    </div>
-
-                    <div class="tip-box">
-                        <span class="section-label tip">센스리더 팁</span>
-                        <p>오디오 플레이어에서는 센스리더의 가상 커서를 해제하고 사용해야 합니다. (<kbd>Ctrl+Shift+F12</kbd> 키)</p>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section4-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-2-content">
-                        <h3 id="section4-2">4-2. 동영상 개요 생성</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section4-2-content" class="collapsible-content" aria-labelledby="section4-2" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>동영상 개요 기능은 소스 자료의 내용을 동영상 형식으로 요약하여 시각적으로 표현하는 기능입니다. 주요 개념과 핵심 내용을 간결하게 정리하여 동영상 스크립트나 개요 형태로 제공합니다. 수업용 동영상 제작 시 스크립트로 활용하거나, 학생들에게 자료를 시각적으로 설명할 때 유용합니다. 생성된 개요는 텍스트 형식으로 제공되므로 센스리더로 쉽게 읽을 수 있으며, 내용을 수정하거나 다른 문서에 복사하여 활용할 수 있습니다.</p>
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>플레이어 제어를 위해서는 반드시 <strong>가상 커서를 해제(<kbd>Ctrl+Shift+F12</kbd>)</strong>해야 합니다.</li>
+                                    <li><strong>스페이스바</strong>를 눌러 오디오를 재생하거나 일시정지할 수 있습니다.</li>
+                                    <li>좌우 방향키로 재생 위치를 탐색할 수 있으나, 정확한 이동이 어려울 수 있습니다.</li>
+                                    <li>탭 키와 Shift+탭 키를 사용하여 '옵션 더보기', '닫기', '재생/일시정지' 등 컨트롤 간에 이동할 수 있습니다.</li>
+                                    <li>'옵션 더보기' 버튼에서 <strong>Enter</strong>를 누르면 재생 속도 조절, MP3 다운로드, 링크 공유 등의 메뉴를 이용할 수 있습니다.</li>
+                                    <li>탐색을 마친 후에는 반드시 <strong>가상 커서를 다시 활성화(<kbd>Ctrl+Shift+F12</kbd>)</strong>하여 웹 페이지 탐색으로 돌아가야 합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "스튜디오" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "동영상 개요" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 생성을 시작합니다.</li>
-                            <li>Step 4. 생성이 완료되면 결과를 확인합니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+                    <!-- 4.2. AI 동영상 개요 생성 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section4-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-2-content">
+                            <h3 id="section4-2">4.2. AI 동영상 개요 생성</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section4-2-content" class="collapsible-content" aria-labelledby="section4-2" aria-hidden="true">
+                            <p>소스 자료를 기반으로, AI 호스트가 관련 이미지를 보여주며 발표하는 형식의 고품질 프레젠테이션 영상을 생성합니다. 유튜브에 바로 올려도 될 만큼 품질이 뛰어나 시각적인 자료 제작에 유용합니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section4-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-3-content">
-                        <h3 id="section4-3">4-3. 마인드맵 생성</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section4-3-content" class="collapsible-content" aria-labelledby="section4-3" aria-hidden="true">
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. "스튜디오" 패널에서 "동영상 개요" 생성 버튼을 찾아 실행합니다.</p>
+                                <p>Step 2. 원하는 영상 스타일과 길이를 선택합니다.</p>
+                                <p>Step 3. "만들기" 버튼을 눌러 생성을 시작합니다.</p>
+                                <p>Step 4. 생성이 완료되면 비디오 플레이어가 나타납니다.</p>
+                            </div>
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>마인드맵 기능은 소스 자료의 핵심 개념과 그 관계를 시각적인 구조도 형태로 만들어줍니다. 업로드된 문서들의 내용을 분석하여 서로 다른 아이디어를 연결하는 개념 지도를 자동으로 구축합니다. 전체적인 내용의 뼈대를 파악하는 데 유용하며, 여러 소스에 흩어져 있는 정보들을 통합적으로 이해하고 연결고리를 찾는 데 효과적입니다. 생성된 마인드맵의 각 노드(개념)를 선택하면 해당 개념에 대한 추가 질문이 채팅창에 텍스트 형태로 제시되므로, 시각적 형태를 볼 수 없더라도 핵심 주제 목록을 파악하고 관련 내용을 질문하는 방식으로 활용할 수 있습니다.</p>
-                    </div>
-
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "스튜디오" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "마인드맵" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 생성을 시작합니다.</li>
-                            <li>Step 4. 생성된 마인드맵에서 <kbd>Tab</kbd> 키를 눌러 각 노드를 선택합니다.</li>
-                            <li>Step 5. 선택한 노드에 대한 질문이 채팅창에 표시됩니다.</li>
-                        </ul>
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>동영상 플레이어 조작법은 AI 오디오 오버뷰의 플레이어와 거의 동일합니다.</li>
+                                    <li>플레이어 제어를 위해서는 반드시 <strong>가상 커서를 해제(<kbd>Ctrl+Shift+F12</kbd>)</strong>해야 합니다.</li>
+                                    <li>탭 키로 컨트롤을 탐색하고 <strong>스페이스바</strong>로 재생/일시정지, <strong>Enter</strong>로 버튼을 실행할 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="tip-box">
-                        <span class="section-label tip">센스리더 팁</span>
-                        <p>마인드맵은 기본적으로 시각적 형태이지만, 각 노드를 <kbd>Tab</kbd> 키로 선택하면 해당 개념에 대한 질문이 채팅창에 텍스트로 제시됩니다. 이를 통해 핵심 주제를 파악하고 질문할 수 있습니다.</p>
-                    </div>
-                    </div>
-                </div>
+                    <!-- 4.3. 마인드맵 생성 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section4-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-3-content">
+                            <h3 id="section4-3">4.3. 마인드맵 생성 (텍스트 기반 활용법)</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section4-3-content" class="collapsible-content" aria-labelledby="section4-3" aria-hidden="true">
+                            <p>소스 자료의 핵심 개념과 관계를 시각적인 구조도로 만들어주지만, 스크린리더 사용자는 다음과 같은 방법으로 시각 정보 없이도 핵심 정보를 파악할 수 있습니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section4-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-4-content">
-                        <h3 id="section4-4">4-4. 보고서 생성</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section4-4-content" class="collapsible-content" aria-labelledby="section4-4" aria-hidden="true">
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. "스튜디오"에서 "마인드맵" 생성 버튼을 실행합니다.</p>
+                                <p>Step 2. 생성이 완료되면 마인드맵 영역이 나타납니다.</p>
+                                <p>Step 3. 마인드맵의 각 노드(핵심 개념)는 버튼 형태로 제공됩니다.</p>
+                                <p>Step 4. 특정 노드 버튼을 실행하면, 해당 개념에 대한 추천 질문이 채팅창에 자동으로 입력됩니다.</p>
+                                <p>Step 5. 채팅창으로 이동하여 이 질문을 활용해 AI와 대화를 이어가며 개념을 탐색합니다.</p>
+                            </div>
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>보고서 기능은 소스 자료의 내용을 종합하여 체계적인 문서 형태로 정리해줍니다. 주요 개념, 핵심 내용, 세부 사항 등을 논리적인 순서로 구성하여 완성도 있는 보고서를 자동으로 생성합니다. 연구 보고서 작성, 수업 자료 정리, 프로젝트 요약 등 다양한 목적으로 활용할 수 있습니다. 생성된 보고서는 텍스트 형식으로 제공되므로 센스리더로 쉽게 읽을 수 있으며, 복사하여 다른 문서에 붙여넣을 수도 있습니다. 보고서는 일반적으로 서론, 본론, 결론의 구조를 갖추고 있어, 학술적 글쓰기나 공식 문서 작성 시 기초 자료로 활용하기에 적합합니다.</p>
-                    </div>
-
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "스튜디오" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "보고서" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 생성을 시작합니다.</li>
-                            <li>Step 4. 생성이 완료되면 결과를 확인하고 필요시 복사합니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section4-5')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-5-content">
-                        <h3 id="section4-5">4-5. 플래시카드 생성</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
-                    </div>
-                    <div id="section4-5-content" class="collapsible-content" aria-labelledby="section4-5" aria-hidden="true">
-
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>플래시카드 기능은 소스 자료의 내용을 바탕으로 학습용 플래시카드를 자동으로 만들어줍니다. 앞면에는 질문이나 핵심 용어가, 뒷면에는 답변이나 설명이 포함된 카드 세트를 생성합니다. 학생들의 암기 학습이나 개념 확인에 유용하며, 생성된 플래시카드는 다양한 형태로 제공되어 반복 학습에 활용할 수 있습니다. "맞춤 설정" 기능을 통해 플래시카드의 개수나 난이도를 조정할 수도 있습니다. 플래시카드는 질문과 답변이 순차적으로 표시되므로 <kbd>Tab</kbd> 키로 이동하며 학습할 수 있으며, 각 카드의 내용을 복사하여 별도의 학습 자료로 만들 수도 있습니다.</p>
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>마인드맵 생성 후, 탭 키를 누르면 마인드맵의 각 노드(핵심 개념)가 버튼 형태로 순서대로 탐색됩니다.</li>
+                                    <li>하나의 노드 버튼에 포커스가 있을 때 <strong>Enter</strong> 키를 누르면 해당 노드에 대한 추천 질문이 채팅창에 자동으로 입력됩니다.</li>
+                                    <li>사용자는 채팅창으로 이동해 이 질문을 그대로 사용하거나 수정하여 AI에게 질문함으로써, 시각적인 맵 없이도 핵심 개념들을 탐색해 나갈 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>H</kbd> 키를 눌러 "스튜디오" 헤딩으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "플래시카드" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 생성을 시작합니다.</li>
-                            <li>Step 4. (선택 사항) "맞춤 설정" 버튼을 눌러 개수나 난이도를 조정합니다.</li>
-                            <li>Step 5. 생성이 완료되면 결과를 확인합니다.</li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+                    <!-- 4.4. 보고서 및 플래시카드 생성 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section4-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section4-4-content">
+                            <h3 id="section4-4">4.4. 보고서 및 플래시카드 생성</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section4-4-content" class="collapsible-content" aria-labelledby="section4-4" aria-hidden="true">
+                            <p>"보고서" 기능은 소스 내용을 체계적인 문서 형태로, "플래시카드" 기능은 질문과 답변 형식의 학습 카드로 만들어 줍니다. 두 기능 모두 결과물이 텍스트로 제공되므로 스크린리더로 쉽게 접근하고 복사하여 활용할 수 있습니다.</p>
 
+                            <div>
+                                <span class="section-label steps">실행 순서</span>
+                                <p>Step 1. "스튜디오" 패널에서 "보고서" 또는 "플래시카드" 생성 버튼을 실행합니다.</p>
+                                <p>Step 2. 원하는 형식을 선택하고 "생성" 버튼을 누릅니다.</p>
+                                <p>Step 3. 생성이 완료되면 결과물이 화면에 표시되며, 복사하거나 닫을 수 있습니다.</p>
+                            </div>
+
+                            <div>
+                                <span class="section-label tip">센스리더 팁</span>
+                                <ul>
+                                    <li>생성된 콘텐츠를 열람할 때는 <strong>가상 커서를 해제(<kbd>Ctrl+Shift+F12</kbd>)</strong>하고, 해당 콘텐츠 제목이 읽히는 버튼에서 <strong>Enter</strong>를 눌러야 뷰어가 제대로 열립니다.</li>
+                                    <li>센스리더가 '풀다운 버튼'이라고 읽는다면 가상 커서가 켜진 상태이므로, 반드시 해제 후 다시 시도해야 합니다.</li>
+                                    <li>보고서 뷰어가 열린 상태에서 탭 키를 누르면 '제목 편집', '복사', '삭제', '닫기' 등의 버튼을 순서대로 탐색하며 제어할 수 있습니다.</li>
+                                </ul>
+                            </div>
+
+                            <p>다음으로, 이러한 기능들을 실제 교육 현장에서 어떻게 활용할 수 있는지 아이디어를 살펴보겠습니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 5. 결과물 정리 및 공유 -->
+            <!-- 5. 노트북LM 활용 아이디어 -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section5')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-content">
-                    <h2 id="section5">5. 결과물 정리 및 공유</h2>
+                    <h2 id="section5">5. 노트북LM 활용 아이디어 💡</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section5-content" class="collapsible-content" aria-labelledby="section5" aria-hidden="true">
+                    <p>노트북LM은 단순히 자료를 요약하는 것을 넘어, 교원의 수업 준비와 연구, 행정 업무에 실질적인 도움을 줄 수 있습니다.</p>
 
-                <div class="collapsible-container article-container">
-                    <div class="collapsible-header" onclick="toggleSection('section5-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-1-content">
-                        <h3 id="section5-1">5-1. 노트북 공유</h3>
-                        <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                    <!-- 5.1. 맞춤형 학습지 및 평가 문항 개발 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section5-1')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-1-content">
+                            <h3 id="section5-1">5.1. 맞춤형 학습지 및 평가 문항 개발</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section5-1-content" class="collapsible-content" aria-labelledby="section5-1" aria-hidden="true">
+                            <p>긴 지문의 교과서 본문이나 여러 개의 신문 기사를 소스로 추가한 뒤, "이 자료를 바탕으로 학생들이 핵심 내용을 파악할 수 있는 질문 5개를 만들어 줘" 또는 "이 내용과 관련된 서술형 평가 문항과 채점 기준을 제시해 줘" 와 같이 요청하여 학습지와 평가 문항을 손쉽게 제작할 수 있습니다.</p>
+                        </div>
                     </div>
-                    <div id="section5-1-content" class="collapsible-content" aria-labelledby="section5-1" aria-hidden="true">
 
-                    <div>
-                        <span class="section-label concept">개념</span>
-                        <p>생성된 노트북 전체 또는 채팅 기록만 선택적으로 다른 사람과 공유하여 협업할 수 있습니다. 최대 50명까지 협업이 가능하며, "전체 노트북 공유"는 소스, 채팅 기록, 생성된 자료를 모두 공유하고, "채팅만 공유"는 AI 채팅 기록만 읽기 전용으로 공유합니다. 학교 내규나 교육 자료를 소스로 업로드한 후 다른 교사들이 질문만 할 수 있도록 "채팅만" 공유 기능을 활용하면 효율적인 정보 전달 및 질의응답 시스템을 구축할 수 있습니다. 공유 링크는 언제든지 비활성화할 수 있으며, 공유된 사용자의 권한도 관리할 수 있습니다.</p>
+                    <!-- 5.2. 멀티미디어 수업 자료 제작 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section5-2')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-2-content">
+                            <h3 id="section5-2">5.2. 멀티미디어 수업 자료 제작</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section5-2-content" class="collapsible-content" aria-labelledby="section5-2" aria-hidden="true">
+                            <p>특정 주제에 대한 자료들을 소스로 넣고 'AI 오디오 오버뷰' 기능을 활용하면, 해당 주제에 대한 전문가 대담 형식의 오디오 콘텐츠가 만들어집니다. 이 파일을 학생들에게 배포하여 듣기 자료로 활용하거나, '동영상 개요' 기능을 통해 생성된 스크립트를 기반으로 수업용 영상 콘텐츠를 기획할 수 있습니다.</p>
+                        </div>
                     </div>
 
-                    <div>
-                        <span class="section-label steps">실행 순서</span>
-                        <ul>
-                            <li>Step 1. <kbd>Ctrl+Home</kbd> 키를 눌러 화면 최상단으로 이동합니다.</li>
-                            <li>Step 2. <kbd>Tab</kbd> 키를 눌러 "공유" 버튼으로 이동합니다.</li>
-                            <li>Step 3. 엔터 키를 눌러 공유 설정을 엽니다.</li>
-                            <li>Step 4. "전체 노트북 공유" 또는 "채팅만 공유"를 선택합니다.</li>
-                            <li>Step 5. "공유 링크 만들기" 버튼을 클릭합니다.</li>
-                            <li>Step 6. 생성된 링크를 복사한 후 (<kbd>Ctrl+C</kbd>) 전달합니다.</li>
-                        </ul>
+                    <!-- 5.3. 수업 연구 및 논문 자료 분석 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section5-3')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-3-content">
+                            <h3 id="section5-3">5.3. 수업 연구 및 논문 자료 분석</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section5-3-content" class="collapsible-content" aria-labelledby="section5-3" aria-hidden="true">
+                            <p>연구에 필요한 논문이나 보고서 PDF 파일들을 소스로 추가하고, "이 자료들에서 '자기주도학습'에 대해 공통적으로 언급하는 부분을 요약해 줘" 또는 "연구의 이론적 배경에 활용할 만한 주요 개념들을 정리해 줘" 와 같이 질문하여 방대한 자료를 효율적으로 분석하고 연구의 깊이를 더할 수 있습니다.</p>
+                        </div>
                     </div>
-                    </div>
-                </div>
 
+                    <!-- 5.4. 행정 업무 부담 경감 -->
+                    <div class="collapsible-container article-container">
+                        <div class="collapsible-header" onclick="toggleSection('section5-4')" role="button" tabindex="0" aria-expanded="false" aria-controls="section5-4-content">
+                            <h3 id="section5-4">5.4. 행정 업무 부담 경감</h3>
+                            <span class="collapsible-toggle" aria-hidden="true">▼</span>
+                        </div>
+                        <div id="section5-4-content" class="collapsible-content" aria-labelledby="section5-4" aria-hidden="true">
+                            <p>학교 운영 계획서나 여러 부서의 업무 보고 문서를 소스로 추가한 뒤, "다음 달 예정된 주요 학사 일정을 표로 정리해 줘" 또는 "이 문서들에서 '안전 교육'과 관련된 내용만 추출해서 요약해 줘" 와 같이 요청하여 복잡한 행정 문서들을 빠르게 처리하고 필요한 정보를 정확하게 찾아낼 수 있습니다.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 자주 묻는 질문 -->
+            <!-- 6. 자주 묻는 질문 (FAQ) -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section-faq')" role="button" tabindex="0" aria-expanded="false" aria-controls="section-faq-content">
-                    <h2 id="section-faq">자주 묻는 질문</h2>
+                    <h2 id="section-faq">6. 자주 묻는 질문 (FAQ) ❓</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section-faq-content" class="collapsible-content" aria-labelledby="section-faq" aria-hidden="true">
+                    <div class="faq-item">
+                        <div class="faq-question">Q1: HWP(한글) 파일도 소스로 사용할 수 있나요?</div>
+                        <div class="faq-answer">A: 아니요, 직접 업로드할 수는 없습니다. 하지만 한글 프로그램의 '다른 이름으로 저장하기' 또는 'PDF로 저장하기' 기능을 이용해 파일을 PDF로 변환한 후 소스로 추가할 수 있습니다. 대부분의 문서는 PDF 형식으로 변환하여 활용하는 것이 좋습니다.</div>
+                    </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Q1: 무료로 사용할 수 있나요?</div>
-                    <div class="faq-answer">네, 구글 계정만 있으면 무료로 사용 가능합니다.</div>
-                </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q2: 외국어 논문을 소스로 넣고 한국어로 질문하면 번역해서 답변해주나요?</div>
+                        <div class="faq-answer">A: 네, 그렇습니다. 노트북LM은 매우 뛰어난 번역 성능을 가지고 있습니다. 영어, 일본어 등 외국어로 된 소스를 추가하고 채팅창에서 한국어로 질문하면, AI가 내용을 완벽히 이해하여 매우 자연스러운 한국어로 답변해 줍니다. 별도의 번역 과정 없이 외국 자료를 깊이 있게 분석할 수 있어 연구에 매우 유용합니다.</div>
+                    </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Q2: 센스리더로 모든 기능을 사용할 수 있나요?</div>
-                    <div class="faq-answer">대부분의 주요 기능은 접근 가능합니다. 마인드맵은 각 노드를 선택하여 텍스트 질문으로 전환하는 방식으로 활용합니다.</div>
-                </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q3: 노트북LM은 챗GPT와 무엇이 다른가요?</div>
+                        <div class="faq-answer">A: 가장 큰 차이점은 '정보의 근거'입니다. 챗GPT는 인터넷의 방대한 데이터를 기반으로 답변을 생성하는 과정에서 사실이 아닌 내용을 꾸며내는 '환각 현상'이 발생할 수 있습니다. 하지만 노트북LM은 사용자가 직접 제공한 '소스'의 내용 안에서만 답변을 생성하므로, 정보의 신뢰도가 매우 높고 출처를 명확히 확인할 수 있다는 장점이 있습니다.</div>
+                    </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Q3: 업로드한 자료는 안전한가요?</div>
-                    <div class="faq-answer">구글은 NotebookLM 자료를 AI 학습에 사용하지 않으며, 노트북은 비공개로 유지됩니다.</div>
-                </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q4: 업로드한 제 자료가 AI 모델 학습에 사용되나요? 안전한가요?</div>
+                        <div class="faq-answer">A: 구글은 노트북LM에 업로드된 개인 자료를 AI 모델 학습에 사용하지 않으며, 모든 노트북은 기본적으로 사용자 본인만 볼 수 있도록 비공개로 안전하게 유지된다고 명시하고 있습니다. 개인적인 연구 자료나 민감한 정보도 안심하고 활용할 수 있습니다.</div>
+                    </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Q4: AI 오디오 오버뷰는 어떤 언어를 지원하나요?</div>
-                    <div class="faq-answer">한국어 포함 80여 개 언어를 지원하며, 소스 언어를 자동 감지합니다.</div>
-                </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q5: 한 노트북에 소스는 몇 개까지 추가할 수 있고, 노트북은 몇 개까지 만들 수 있나요?</div>
+                        <div class="faq-answer">A: 무료 버전 기준으로, 하나의 노트북에는 최대 50개의 소스를 추가할 수 있습니다. 노트북 자체의 생성 개수에는 특별한 제한이 없어, 주제별로 여러 개의 노트북을 자유롭게 만들어 관리할 수 있습니다.</div>
+                    </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">Q5: 한 노트북에 몇 개의 소스를 추가할 수 있나요?</div>
-                    <div class="faq-answer">최대 50개의 소스를 추가할 수 있으며, 각 소스는 최대 500,000 단어까지 지원합니다.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Q6: 오프라인에서 사용할 수 있나요?</div>
-                    <div class="faq-answer">아니요, 온라인 전용 서비스입니다. 단, 생성된 오디오는 다운로드하여 오프라인에서 들을 수 있습니다.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Q7: AI가 잘못된 정보를 제공하면?</div>
-                    <div class="faq-answer">답변의 출처 번호를 클릭하여 원본 소스를 직접 확인할 수 있습니다.</div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Q8: 노트북을 삭제하려면?</div>
-                    <div class="faq-answer">시작 화면의 "최근 노트북" 목록에서 해당 노트북의 "더보기" 메뉴(<kbd>Shift+F10</kbd>)에서 "삭제"를 선택합니다. 삭제된 노트북은 복구할 수 없습니다.</div>
-                </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q6: AI 오디오 오버뷰나 보고서가 생성되는 데 시간이 너무 오래 걸려요.</div>
+                        <div class="faq-answer">A: 네, 생성하는 내용의 양과 복잡성에 따라 짧게는 3분에서 길게는 10분 이상 소요될 수 있습니다. 생성이 시작되면 페이지 최하단(Ctrl+End)으로 이동한 후 방향키로 위로 조금씩 올라오면 '생성 중'이라는 메시지를 통해 진행 상태를 확인할 수 있습니다. 생성이 완료되면 같은 위치에 결과물이 나타납니다.</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 요약 -->
             <div class="collapsible-container section-container">
                 <div class="collapsible-header" onclick="toggleSection('section-summary')" role="button" tabindex="0" aria-expanded="false" aria-controls="section-summary-content">
-                    <h2 id="section-summary">요약</h2>
+                    <h2 id="section-summary">요약 📝</h2>
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section-summary-content" class="collapsible-content" aria-labelledby="section-summary" aria-hidden="true">
+                    <p>노트북LM은 사용자가 제공한 신뢰할 수 있는 자료만을 기반으로 작동하는 강력한 AI 학습 및 연구 파트너입니다. 웹 접근성이 뛰어나 스크린리더를 활용한 효율적인 탐색 방법을 익히면, 방대한 자료를 분석하고 다양한 형태의 학습 콘텐츠를 제작하여 수업 준비와 연구의 효율을 크게 높일 수 있습니다.</p>
 
-                <p>NotebookLM은 구글의 AI 기반 연구 및 학습 도구로, 다양한 소스 자료를 분석하여 요약, 질의응답, 학습 자료 생성 등의 기능을 제공합니다. 센스리더 사용자를 위한 핵심 기능과 팁을 정리하면 다음과 같습니다.</p>
+                    <ul>
+                        <li><strong>핵심 탐색 구조:</strong> <strong>숫자 2</strong> 키로 '출처', '채팅', '스튜디오'의 3대 패널을 자유롭게 넘나들고, 각 패널 안에서는 탭 키나 N(버튼), F2(편집창) 등의 단축키로 세부 기능을 실행하는 것이 기본 탐색 패턴입니다.</li>
+                        <li><strong>신뢰도 높은 답변:</strong> 내가 올린 자료에만 근거하므로 AI의 단점인 '환각 현상' 없이 정확하고 믿을 수 있는 답변을 얻을 수 있습니다.</li>
+                        <li><strong>AI 오디오 오버뷰:</strong> 텍스트를 귀로 듣는 팟캐스트로 변환하여 정보 접근성을 혁신적으로 개선합니다. 긴 논문이나 복잡한 자료도 출퇴근길에 편하게 들으며 학습할 수 있습니다.</li>
+                        <li><strong>다양한 자료 자동 생성:</strong> 보고서, 학습지, 평가 문항, 마인드맵 등을 자동으로 생성하여 교사의 귀중한 시간을 절약해 줍니다.</li>
+                    </ul>
 
-                <h3>핵심 기능</h3>
-                <ul>
-                    <li><strong>소스 추가:</strong> PDF, .docx, .txt, .md, .mp3, 웹사이트, 유튜브 링크 지원</li>
-                    <li><strong>AI 채팅:</strong> 업로드한 소스에만 근거한 정확한 답변 제공, 출처 번호로 검증 가능</li>
-                    <li><strong>AI 오디오 오버뷰:</strong> 텍스트를 자연스러운 팟캐스트로 변환, 80여 개 언어 지원</li>
-                    <li><strong>학습 자료 생성:</strong> 보고서, 플래시카드, 마인드맵, 동영상 개요 자동 생성</li>
-                    <li><strong>노트북 공유:</strong> 최대 50명과 협업 가능, 전체 또는 채팅만 선택적 공유</li>
-                </ul>
-
-                <h3>센스리더 효율적 탐색</h3>
-                <ul>
-                    <li><kbd>H</kbd> 키: "출처" → "채팅" → "스튜디오" 헤딩 간 빠른 이동</li>
-                    <li><kbd>Tab</kbd> 키: 각 패널 내 버튼 및 편집창 탐색</li>
-                    <li><kbd>B</kbd> 키: 버튼 간 빠른 이동</li>
-                    <li>출처 번호 클릭: 원본 소스 직접 확인</li>
-                    <li>탭 키: 오디오 플레이어에서 가상 커서 해제 후 사용</li>
-                </ul>
-
-                <h3>주요 장점</h3>
-                <ul>
-                    <li>무료 사용 가능 (구글 계정 필요)</li>
-                    <li>소스 기반 답변으로 높은 정확성</li>
-                    <li>텍스트를 청각 자료로 변환 (AI 오디오 오버뷰)</li>
-                    <li>명확한 헤딩 구조로 효율적인 키보드 탐색</li>
-                    <li>다양한 학습 자료 자동 생성으로 수업 준비 시간 절약</li>
-                </ul>
+                    <p>노트북LM의 강력한 학습 보조 및 미디어 생성 기능을 활용하여 선생님의 수업의 질을 한 단계 업그레이드하시길 바랍니다.</p>
                 </div>
             </div>
         </main>
