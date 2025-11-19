@@ -326,6 +326,257 @@
         .skip-link:focus {
             top: 0;
         }
+
+        /* 오디오 플레이어 스타일 */
+        .audio-player-container {
+            background-color: #f8f9fa;
+            border: 2px solid #1a73e8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .audio-player-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .audio-player-icon {
+            font-size: 1.5em;
+        }
+
+        .audio-player-title {
+            font-weight: bold;
+            color: #1a73e8;
+            font-size: 1em;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .audio-player-container audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .speed-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .speed-button:hover {
+            background-color: #1557b0;
+        }
+
+        .speed-button:active {
+            background-color: #0d3c7d;
+        }
+
+        .speed-button.active {
+            background-color: #34a853;
+        }
+
+        .speed-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .audio-controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* 전체 재생 컨트롤 스타일 */
+        .full-playlist-container {
+            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+
+        .full-playlist-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .full-playlist-icon {
+            font-size: 2em;
+        }
+
+        .full-playlist-title {
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .full-playlist-description {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .playlist-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .playlist-button {
+            background-color: white;
+            color: #1a73e8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .playlist-button:hover {
+            background-color: #f1f3f4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .playlist-button:active {
+            transform: translateY(0);
+        }
+
+        .playlist-button.stop {
+            background-color: #ea4335;
+            color: white;
+        }
+
+        .playlist-button.stop:hover {
+            background-color: #d33828;
+        }
+
+        .playlist-button.nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #1a73e8;
+        }
+
+        .playlist-button.nav:hover {
+            background-color: white;
+        }
+
+        .playlist-speed-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .current-section-display {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        /* 프로그레스 바 스타일 */
+        .progress-container {
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .progress-bar::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .progress-bar::-moz-range-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .playlist-controls {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                width: 100%;
+            }
+
+            .playlist-button {
+                width: 100%;
+                font-size: 0.85em;
+                padding: 8px 10px;
+            }
+
+            .playlist-speed-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 <body>
@@ -386,6 +637,66 @@
             </div>
         </div>
 
+        <!-- 전체 오디오 재생 컨트롤 -->
+        <div class="full-playlist-container">
+            <div class="full-playlist-header">
+                <span class="full-playlist-icon" aria-hidden="true">🎧</span>
+                <h2 class="full-playlist-title">전체 매뉴얼 음성 듣기</h2>
+            </div>
+            <p class="full-playlist-description">
+                전체 매뉴얼을 처음부터 끝까지 순서대로 들으실 수 있습니다. 재생 버튼을 누르면 소개부터 요약까지 모든 섹션이 자동으로 연속 재생됩니다.
+            </p>
+
+            <!-- 현재 재생 중인 섹션 표시 -->
+            <div id="currentSection" class="current-section-display" style="display: none;">
+                <span style="color: rgba(255, 255, 255, 0.9); font-weight: bold;">현재 재생:</span>
+                <span id="currentSectionName" style="color: white; margin-left: 8px;"></span>
+            </div>
+
+            <!-- 프로그레스 바 -->
+            <div class="progress-container">
+                <input type="range"
+                       id="progressBar"
+                       class="progress-bar"
+                       min="0"
+                       max="100"
+                       value="0"
+                       aria-label="재생 위치"
+                       aria-valuemin="0"
+                       aria-valuemax="100"
+                       aria-valuenow="0">
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+
+            <!-- 재생 컨트롤 버튼 -->
+            <div class="playlist-controls">
+                <button class="playlist-button nav" onclick="playPreviousSection()" aria-label="이전 섹션">
+                    ⏮ 이전
+                </button>
+                <button class="playlist-button nav" onclick="skipBackward()" aria-label="10초 뒤로">
+                    ⏪ 10초
+                </button>
+                <button class="playlist-button" id="playPauseBtn" onclick="togglePlayPause()" aria-label="재생/일시정지">
+                    ▶ 재생
+                </button>
+                <button class="playlist-button nav" onclick="skipForward()" aria-label="10초 앞으로">
+                    10초 ⏩
+                </button>
+                <button class="playlist-button nav" onclick="playNextSection()" aria-label="다음 섹션">
+                    ⏭ 다음
+                </button>
+                <button class="playlist-button" id="speedToggleBtn" onclick="toggleSpeed()" aria-label="재생 속도: 1.0배속">
+                    🎚️ 1.0x
+                </button>
+                <button class="playlist-button stop" onclick="stopPlaylist()" aria-label="재생 중지">
+                    ⏹ 중지
+                </button>
+            </div>
+        </div>
+
         <!-- 본 챕터 제목 -->
         <header class="chapter-title">
             <h1>노트북LM 사용법 안내</h1>
@@ -399,6 +710,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="intro-content" class="collapsible-content" aria-labelledby="intro-title" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-intro" controls controlsList="nodownload noplaybackrate" aria-label="소개 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/00_소개.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-intro', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-intro', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-intro', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>노트북LM(NotebookLM)은 구글이 출시한 인공지능 기반 연구 및 학습 보조 도구입니다. 노트북LM은 사용자가 업로드한 문서, 웹사이트, 오디오 파일 등 신뢰할 수 있는 자료만을 바탕으로 내용을 요약하고, 질문에 답변하며, 다양한 학습 자료를 만들어주는 효율적인 수업 연구 도구입니다. 일반 AI 챗봇과 달리 사용자가 제공한 자료에만 근거하여 답변하므로, 정보의 정확성과 신뢰성이 매우 높습니다. 교육용 구글 계정(센메일 등)으로도 모든 기능을 무료로 사용할 수 있습니다.</p>
 
                     <p>특히 노트북LM은 2024년 9월에 AI 오디오 오버뷰 기능이 추가되며 구글의 대표적 AI 애플리케이션으로 자리잡았습니다. AI 오디오 오버뷰는 텍스트 자료를 두 명의 AI 음성이 대화하는 팟캐스트로 변환하여 시각적 부담 없이 귀로 편안하게 자료를 검토할 수 있도록 돕는 기능입니다. 또한 보고서, 플래시카드, 마인드맵 등 다양한 학습 자료를 자동으로 생성하여 수업 준비 시간을 크게 절약해 줍니다. 웹 접근성 측면에서도 논리적인 헤딩 구조와 키보드 탐색을 잘 지원하여 스크린리더 사용자가 효율적으로 이용할 수 있습니다.</p>
@@ -423,6 +753,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section1-content" class="collapsible-content" aria-labelledby="section1" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-section1" controls controlsList="nodownload noplaybackrate" aria-label="로그인 및 새 노트북 만들기 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/01_로그인_및_새_노트북_만들기.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section1', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section1', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section1', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>노트북LM은 별도의 프로그램 설치 없이 웹 브라우저에서 <code>노트북LM.구글.com</code> 주소로 접속하여 바로 사용할 수 있는 온라인 서비스입니다. 구글 계정만 있으면 누구나 무료로 이용 가능하며, 교육용 구글 계정(센메일 등)으로도 로그인할 수 있습니다.</p>
 
                     <div>
@@ -457,6 +806,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section2-content" class="collapsible-content" aria-labelledby="section2" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-section2" controls controlsList="nodownload noplaybackrate" aria-label="소스 추가하기 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/02_소스_추가하기.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section2', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section2', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section2', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>노트북LM의 모든 작업은 '소스'를 기반으로 이루어집니다. 소스에 따라 노트북을 수업별, 연구 주제별로 따로 만들어 관리할 수 있습니다. 무료 버전에서는 노트북당 최대 50개의 소스(각 50만 단어 또는 200MB 이하 파일)를 추가할 수 있습니다.</p>
 
                     <!-- 2.1. 소스 검색 -->
@@ -608,6 +976,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section3-content" class="collapsible-content" aria-labelledby="section3" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-section3" controls controlsList="nodownload noplaybackrate" aria-label="채팅 패널 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/03_채팅_패널_AI와_대화하기.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section3', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section3', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section3', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>채팅 패널은 추가된 소스 자료에 대해 AI와 자유롭게 대화하며 정보를 얻는 핵심 공간입니다. AI는 사용자가 제공한 자료 안에서만 답변하므로 신뢰도가 높으며, 각 답변에는 출처 번호([1], [2])가 표시되어 어떤 자료의 어느 부분에서 정보를 가져왔는지 즉시 확인할 수 있습니다.</p>
 
                     <!-- 3.1. AI에게 질문하고 답변 받기 -->
@@ -676,6 +1063,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section4-content" class="collapsible-content" aria-labelledby="section4" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-section4" controls controlsList="nodownload noplaybackrate" aria-label="스튜디오 패널 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/04_스튜디오_패널_학습_자료_생성하기.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section4', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section4', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section4', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>스튜디오 패널에서는 소스 자료 전체를 바탕으로 AI 오디오, 보고서, 마인드맵, 퀴즈 등 다양한 형태의 결과물을 만들 수 있습니다. 복잡한 자료를 쉽고 흥미로운 형태로 가공하여 수업 준비나 개인 학습에 바로 활용할 수 있습니다.</p>
 
                     <!-- 4.1. AI 오디오 오버뷰 -->
@@ -805,6 +1211,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section5-content" class="collapsible-content" aria-labelledby="section5" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-section5" controls controlsList="nodownload noplaybackrate" aria-label="노트북LM 활용 아이디어 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/05_노트북LM_활용_아이디어.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section5', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section5', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section5', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>노트북LM은 단순히 자료를 요약하는 것을 넘어, 교원의 수업 준비와 연구, 행정 업무에 실질적인 도움을 줄 수 있습니다.</p>
 
                     <!-- 5.1. 맞춤형 학습지 및 평가 문항 개발 -->
@@ -860,6 +1285,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section-faq-content" class="collapsible-content" aria-labelledby="section-faq" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-faq" controls controlsList="nodownload noplaybackrate" aria-label="자주 묻는 질문 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/06_자주_묻는_질문_FAQ.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-faq', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-faq', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-faq', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="faq-item">
                         <div class="faq-question">Q1: HWP(한글) 파일도 소스로 사용할 수 있나요?</div>
                         <div class="faq-answer">A: 아니요, 직접 업로드할 수는 없습니다. 하지만 한글 프로그램의 '다른 이름으로 저장하기' 또는 'PDF로 저장하기' 기능을 이용해 파일을 PDF로 변환한 후 소스로 추가할 수 있습니다. 대부분의 문서는 PDF 형식으로 변환하여 활용하는 것이 좋습니다.</div>
@@ -899,6 +1343,25 @@
                     <span class="collapsible-toggle" aria-hidden="true">▼</span>
                 </div>
                 <div id="section-summary-content" class="collapsible-content" aria-labelledby="section-summary" aria-hidden="true">
+                    <div class="audio-player-container">
+                        <div class="audio-player-header">
+                            <span class="audio-player-icon" aria-hidden="true">🔊</span>
+                            <span class="audio-player-title">음성으로 듣기</span>
+                        </div>
+                        <audio id="audio-summary" controls controlsList="nodownload noplaybackrate" aria-label="요약 섹션 오디오">
+                            <source src="NotebookLM/NotebookLM_H3_sections/TTS_Audio_Merged/07_요약.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        <div class="audio-controls">
+                            <span class="speed-label">재생 속도:</span>
+                            <div class="speed-control">
+                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-summary', 1.0, this)" aria-label="1배속 재생">1.0x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-summary', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
+                                <button class="speed-button" onclick="setPlaybackSpeed('audio-summary', 2.0, this)" aria-label="2배속 재생">2.0x</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <p>노트북LM은 사용자가 제공한 신뢰할 수 있는 자료만을 기반으로 작동하는 강력한 AI 학습 및 연구 파트너입니다. 웹 접근성이 뛰어나 스크린리더를 활용한 효율적인 탐색 방법을 익히면, 방대한 자료를 분석하고 다양한 형태의 학습 콘텐츠를 제작하여 수업 준비와 연구의 효율을 크게 높일 수 있습니다.</p>
 
                     <ul>
@@ -919,6 +1382,10 @@
     </div>
 
     <script>
+        // 전역 변수: 현재 재생 중인 오디오와 재생 속도
+        let currentlyPlayingAudio = null;
+        let globalPlaybackSpeed = 1.0;
+
         function toggleSection(sectionName) {
             const content = document.getElementById(sectionName + '-content');
             const header = content.previousElementSibling;
@@ -943,6 +1410,311 @@
                 }
             });
         });
+
+        // 오디오 재생 속도 조절 함수 (전역 속도 저장)
+        function setPlaybackSpeed(audioId, speed, buttonElement) {
+            const audio = document.getElementById(audioId);
+            if (audio) {
+                audio.playbackRate = speed;
+                globalPlaybackSpeed = speed; // 전역 속도 저장
+
+                // 같은 그룹 내 모든 버튼의 active 클래스 제거
+                const speedControl = buttonElement.parentElement;
+                speedControl.querySelectorAll('.speed-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                // 클릭된 버튼에 active 클래스 추가
+                buttonElement.classList.add('active');
+
+                // 모든 속도 버튼 업데이트
+                updateAllSpeedButtons(speed);
+            }
+        }
+
+        // 모든 섹션의 속도 버튼 상태 업데이트
+        function updateAllSpeedButtons(speed) {
+            document.querySelectorAll('.speed-control').forEach(control => {
+                control.querySelectorAll('.speed-button').forEach(btn => {
+                    btn.classList.remove('active');
+                    const btnSpeed = parseFloat(btn.textContent);
+                    if (btnSpeed === speed) {
+                        btn.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // 시간 포맷팅 함수 (초를 분:초로 변환)
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // 프로그레스 바 업데이트
+        function updateProgressBar() {
+            if (!currentlyPlayingAudio) return;
+
+            const progressBar = document.getElementById('progressBar');
+            const currentTimeDisplay = document.getElementById('currentTime');
+            const totalTimeDisplay = document.getElementById('totalTime');
+
+            if (progressBar && currentTimeDisplay && totalTimeDisplay) {
+                const currentTime = currentlyPlayingAudio.currentTime;
+                const duration = currentlyPlayingAudio.duration;
+
+                if (!isNaN(duration)) {
+                    const progress = (currentTime / duration) * 100;
+                    progressBar.value = progress;
+                    progressBar.setAttribute('aria-valuenow', Math.round(progress));
+
+                    currentTimeDisplay.textContent = formatTime(currentTime);
+                    totalTimeDisplay.textContent = formatTime(duration);
+                }
+            }
+        }
+
+        // 프로그레스 바 클릭/드래그 시 재생 위치 변경
+        function seekAudio(event) {
+            if (!currentlyPlayingAudio) return;
+
+            const progressBar = document.getElementById('progressBar');
+            const duration = currentlyPlayingAudio.duration;
+
+            if (!isNaN(duration)) {
+                const seekTime = (progressBar.value / 100) * duration;
+                currentlyPlayingAudio.currentTime = seekTime;
+            }
+        }
+
+        // 페이지 로드 시 모든 오디오 요소에 이벤트 리스너 추가
+        document.addEventListener('DOMContentLoaded', function() {
+            const allAudios = document.querySelectorAll('audio');
+            const progressBar = document.getElementById('progressBar');
+
+            allAudios.forEach(audio => {
+                // 재생 시작 시 다른 오디오 중지
+                audio.addEventListener('play', function() {
+                    if (currentlyPlayingAudio && currentlyPlayingAudio !== this) {
+                        currentlyPlayingAudio.pause();
+                    }
+                    currentlyPlayingAudio = this;
+                    // 전역 속도 적용
+                    this.playbackRate = globalPlaybackSpeed;
+                });
+
+                // 오디오 로드 시 전역 속도 적용
+                audio.addEventListener('loadedmetadata', function() {
+                    this.playbackRate = globalPlaybackSpeed;
+                });
+
+                // 시간 업데이트 이벤트
+                audio.addEventListener('timeupdate', updateProgressBar);
+            });
+
+            // 프로그레스 바 이벤트 리스너
+            if (progressBar) {
+                progressBar.addEventListener('input', seekAudio);
+                progressBar.addEventListener('change', seekAudio);
+
+                // 프로그레스 바에서 스페이스바와 K 키로 재생/일시정지
+                progressBar.addEventListener('keydown', function(e) {
+                    if (e.code === 'Space' || e.key === ' ' || e.key === 'k' || e.key === 'K') {
+                        e.preventDefault(); // 기본 동작 방지 (스페이스바의 페이지 스크롤 방지)
+                        togglePlayPause();
+                    }
+                });
+            }
+
+            // 초기 속도 버튼 상태 설정
+            updateAllSpeedButtons(globalPlaybackSpeed);
+        });
+
+        // 전체 오디오 연속 재생 함수
+        let playlistMode = false;
+        let playlistIndex = 0;
+        const audioIds = ['audio-intro', 'audio-section1', 'audio-section2', 'audio-section3',
+                         'audio-section4', 'audio-section5', 'audio-faq', 'audio-summary'];
+        const sectionNames = ['소개', '1. 로그인 및 새 노트북 만들기', '2. 소스 추가하기',
+                             '3. 채팅 패널 - AI와 대화하기', '4. 스튜디오 패널 - 학습 자료 생성하기',
+                             '5. 노트북LM 활용 아이디어', '6. 자주 묻는 질문 (FAQ)', '요약'];
+
+        // 속도 배열 (1.0x → 1.5x → 2.0x → 1.0x 순환)
+        const speedOptions = [1.0, 1.5, 2.0];
+        let currentSpeedIndex = 0;
+
+        // 속도 토글 함수
+        function toggleSpeed() {
+            currentSpeedIndex = (currentSpeedIndex + 1) % speedOptions.length;
+            const newSpeed = speedOptions[currentSpeedIndex];
+            globalPlaybackSpeed = newSpeed;
+
+            // 현재 재생 중인 오디오에도 즉시 적용
+            if (currentlyPlayingAudio) {
+                currentlyPlayingAudio.playbackRate = newSpeed;
+            }
+
+            // 속도 버튼 업데이트
+            updateSpeedButton();
+            // 모든 속도 버튼 업데이트
+            updateAllSpeedButtons(newSpeed);
+        }
+
+        // 속도 버튼 표시 업데이트
+        function updateSpeedButton() {
+            const btn = document.getElementById('speedToggleBtn');
+            const speed = speedOptions[currentSpeedIndex];
+            if (btn) {
+                btn.innerHTML = `🎚️ ${speed}x`;
+                btn.setAttribute('aria-label', `재생 속도: ${speed}배속`);
+            }
+        }
+
+        // 전역 속도 설정 함수 (섹션별 속도 버튼용)
+        function setGlobalSpeed(speed, buttonElement) {
+            globalPlaybackSpeed = speed;
+
+            // speedOptions 배열에서 해당 속도의 인덱스 찾기
+            currentSpeedIndex = speedOptions.indexOf(speed);
+
+            // 현재 재생 중인 오디오에도 즉시 적용
+            if (currentlyPlayingAudio) {
+                currentlyPlayingAudio.playbackRate = speed;
+            }
+
+            // 속도 버튼 업데이트
+            updateSpeedButton();
+            // 모든 속도 버튼 업데이트
+            updateAllSpeedButtons(speed);
+        }
+
+        // 10초 뒤로 이동
+        function skipBackward() {
+            if (currentlyPlayingAudio) {
+                currentlyPlayingAudio.currentTime = Math.max(0, currentlyPlayingAudio.currentTime - 10);
+            }
+        }
+
+        // 10초 앞으로 이동
+        function skipForward() {
+            if (currentlyPlayingAudio) {
+                currentlyPlayingAudio.currentTime = Math.min(
+                    currentlyPlayingAudio.duration,
+                    currentlyPlayingAudio.currentTime + 10
+                );
+            }
+        }
+
+        function playFullPlaylist() {
+            playlistMode = true;
+            playlistIndex = 0;
+            playNextInPlaylist();
+            updatePlayPauseButton(true);
+        }
+
+        function playNextInPlaylist() {
+            if (!playlistMode || playlistIndex >= audioIds.length) {
+                playlistMode = false;
+                document.getElementById('currentSection').style.display = 'none';
+                updatePlayPauseButton(false);
+                return;
+            }
+
+            const audio = document.getElementById(audioIds[playlistIndex]);
+            if (audio) {
+                // 섹션 자동 열기
+                const sectionId = audioIds[playlistIndex].replace('audio-', '');
+                const content = document.getElementById(sectionId + '-content');
+                if (content && !content.classList.contains('open')) {
+                    toggleSection(sectionId);
+                }
+
+                // 현재 섹션 표시
+                updateCurrentSectionDisplay();
+
+                // 오디오 재생
+                audio.currentTime = 0;
+                audio.playbackRate = globalPlaybackSpeed;
+                audio.play();
+
+                // 종료 시 다음 재생
+                audio.onended = function() {
+                    playlistIndex++;
+                    playNextInPlaylist();
+                };
+            } else {
+                playlistIndex++;
+                playNextInPlaylist();
+            }
+        }
+
+        function togglePlayPause() {
+            if (!playlistMode) {
+                // 재생 시작
+                playFullPlaylist();
+            } else {
+                // 일시정지/재생 토글
+                if (currentlyPlayingAudio) {
+                    if (currentlyPlayingAudio.paused) {
+                        currentlyPlayingAudio.play();
+                        updatePlayPauseButton(true);
+                    } else {
+                        currentlyPlayingAudio.pause();
+                        updatePlayPauseButton(false);
+                    }
+                }
+            }
+        }
+
+        function playPreviousSection() {
+            if (playlistIndex > 0) {
+                playlistIndex--;
+                playlistMode = true;
+                playNextInPlaylist();
+            }
+        }
+
+        function playNextSection() {
+            if (playlistIndex < audioIds.length - 1) {
+                playlistIndex++;
+                playlistMode = true;
+                playNextInPlaylist();
+            }
+        }
+
+        function stopPlaylist() {
+            playlistMode = false;
+            if (currentlyPlayingAudio) {
+                currentlyPlayingAudio.pause();
+                currentlyPlayingAudio.currentTime = 0;
+            }
+            document.getElementById('currentSection').style.display = 'none';
+            updatePlayPauseButton(false);
+        }
+
+        function updatePlayPauseButton(isPlaying) {
+            const btn = document.getElementById('playPauseBtn');
+            if (btn) {
+                if (isPlaying) {
+                    btn.innerHTML = '⏸ 일시정지';
+                    btn.setAttribute('aria-label', '일시정지');
+                } else {
+                    btn.innerHTML = '▶ 재생';
+                    btn.setAttribute('aria-label', '재생');
+                }
+            }
+        }
+
+        function updateCurrentSectionDisplay() {
+            const display = document.getElementById('currentSection');
+            const nameSpan = document.getElementById('currentSectionName');
+            if (display && nameSpan) {
+                display.style.display = 'block';
+                nameSpan.textContent = sectionNames[playlistIndex];
+            }
+        }
     </script>
 </body>
 </html>

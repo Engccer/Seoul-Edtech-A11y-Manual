@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ElevenLabs__list_models",
+      "mcp__ElevenLabs__text_to_speech",
+      "Bash(ffmpeg:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
