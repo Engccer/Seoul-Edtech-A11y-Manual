@@ -471,6 +471,21 @@
             transform: translateY(0);
         }
 
+        /* 재생/일시정지 버튼 강조 스타일 */
+        #playPauseBtn {
+            background-color: #34a853;
+            color: white;
+            padding: 14px 28px;
+            font-size: 1.15em;
+            box-shadow: 0 4px 8px rgba(52, 168, 83, 0.3);
+        }
+
+        #playPauseBtn:hover {
+            background-color: #2e8b43;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+        }
+
         .playlist-button.stop {
             background-color: #ea4335;
             color: white;
@@ -720,12 +735,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-intro', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-intro', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-intro', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-intro" onclick="toggleSectionSpeed('audio-intro', 'speedBtn-intro')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -763,12 +775,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section1', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section1', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section1', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-section1" onclick="toggleSectionSpeed('audio-section1', 'speedBtn-section1')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -816,12 +825,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section2', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section2', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section2', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-section2" onclick="toggleSectionSpeed('audio-section2', 'speedBtn-section2')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -986,12 +992,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section3', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section3', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section3', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-section3" onclick="toggleSectionSpeed('audio-section3', 'speedBtn-section3')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -1073,12 +1076,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section4', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section4', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section4', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-section4" onclick="toggleSectionSpeed('audio-section4', 'speedBtn-section4')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -1221,12 +1221,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-section5', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section5', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-section5', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-section5" onclick="toggleSectionSpeed('audio-section5', 'speedBtn-section5')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -1295,12 +1292,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-faq', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-faq', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-faq', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-faq" onclick="toggleSectionSpeed('audio-faq', 'speedBtn-faq')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -1353,12 +1347,9 @@
                             브라우저가 오디오를 지원하지 않습니다.
                         </audio>
                         <div class="audio-controls">
-                            <span class="speed-label">재생 속도:</span>
-                            <div class="speed-control">
-                                <button class="speed-button active" onclick="setPlaybackSpeed('audio-summary', 1.0, this)" aria-label="1배속 재생">1.0x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-summary', 1.5, this)" aria-label="1.5배속 재생">1.5x</button>
-                                <button class="speed-button" onclick="setPlaybackSpeed('audio-summary', 2.0, this)" aria-label="2배속 재생">2.0x</button>
-                            </div>
+                            <button class="speed-button active" id="speedBtn-summary" onclick="toggleSectionSpeed('audio-summary', 'speedBtn-summary')" aria-label="재생 속도: 1.0배속">
+                                🎚️ 1.0x
+                            </button>
                         </div>
                     </div>
 
@@ -1443,6 +1434,37 @@
                     }
                 });
             });
+        }
+
+        // 섹션별 플레이어 속도 토글 함수 (1.0x → 1.5x → 2.0x 순환)
+        function toggleSectionSpeed(audioId, buttonId) {
+            const audio = document.getElementById(audioId);
+            const button = document.getElementById(buttonId);
+            if (!audio || !button) return;
+
+            // 현재 속도 가져오기
+            let currentSpeed = audio.playbackRate;
+
+            // 다음 속도 계산 (1.0 → 1.5 → 2.0 → 1.0 순환)
+            let nextSpeed;
+            if (currentSpeed < 1.3) {
+                nextSpeed = 1.5;
+            } else if (currentSpeed < 1.8) {
+                nextSpeed = 2.0;
+            } else {
+                nextSpeed = 1.0;
+            }
+
+            // 속도 적용
+            audio.playbackRate = nextSpeed;
+            globalPlaybackSpeed = nextSpeed; // 전역 속도도 업데이트
+
+            // 버튼 텍스트 및 aria-label 업데이트
+            button.textContent = `🎚️ ${nextSpeed}x`;
+            button.setAttribute('aria-label', `재생 속도: ${nextSpeed}배속`);
+
+            // 모든 속도 버튼 업데이트 (기존 버튼이 있다면)
+            updateAllSpeedButtons(nextSpeed);
         }
 
         // 시간 포맷팅 함수 (초를 분:초로 변환)
